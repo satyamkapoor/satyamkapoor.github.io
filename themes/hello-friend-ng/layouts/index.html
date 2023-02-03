@@ -1,0 +1,33 @@
+{{ define "main" }}
+    <main aria-role="main">
+        <div>
+            {{ if .Site.Params.Portrait.Path }}
+               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+            {{ end }}
+
+            <h1>{{ .Site.Title }}</h1>
+
+
+  
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                </div>
+                <p style="margin-left: 20%;margin-right:20%;text-align:justify"> Hi, I'm a software developer & devOps enthusiast. I'm from India, living & working in Belgium.
+
+                    On this website you'll find some information <a href="about">about me</a>, and a few <a href="posts">blog posts</a> which I wrote & are mostly related to the topics I'm passionate about - Cloud, DevOps, Linux, Security & more.
+                </p>
+
+ 
+
+            {{- end }}
+
+                &nbsp;&nbsp;
+            <p>
+            {{ range ( where .Site.RegularPages "Type" "=" "posts" | first 2 ) }}
+            <li  style="list-style-type: none"><span><a style="text-decoration: none" href="{{ .Permalink }}"><span style="font-style: italic;">{{ .Title }}</span> {{.Date.Format "Jan 2, 2006"}}</a></li>
+          {{end}}
+          </p>
+        </div>
+    </main>
+{{ end }}

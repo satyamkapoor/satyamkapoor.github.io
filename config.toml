@@ -1,0 +1,102 @@
+baseurl      = "https://satyamkapoor.com"
+title        = "Satyam Kapoor | DevOps Engineer"
+languageCode = "en-us"
+theme        = "hello-friend-ng"
+paginate     = 10
+defaultContentLanguage = "en"
+disqusShortname = "satyamkapoor-2"
+
+[Author]
+  name = "Satyam Kapoor"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+  enableSharingButtons = true
+
+[[params.social]]
+  name = "twitter"
+  url = "https://twitter.com/imsatyamkapoor"
+
+
+[[params.social]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/satyamkapoor/"
+
+
+[[params.social]]
+  name = "email"
+  url = "mailto:satyam@satyamkapoor.com"
+
+
+
+
+
+  # Subtitle for home
+  homeSubtitle = "Hi, I'm a software devoper & devOps enthusiast. I'm from India, living & working in Belgium."
+  homeSubtitleTwo = "On this website you'll find some information about me, and a few blog posts which I wrote which are mostly related to the topics I'm passionate about - Cloud, DevOps, Linux, Security & more. You can find me on Twitter, LinkedIn & Github."
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Enable sharing buttons, if you linke
+  enableSharingButtons = true
+
+  # Metadata mostly used in document's head
+  description = "Satyam Kapoor's webspace. Blogging on Kubernetes, devOps, docker, automation, security etc."
+  keywords = ""
+  images = [""]
+
+  # Default theme "light" or "dark"
+  defaultTheme = "dark"
+
+[taxonomies]
+    tag      = "tags"
+    categories = "categories"
+
+[languages]
+  [languages.en]
+    title = "Satyam Kapoor"
+    subtitle = "Cloud Native DevOps Engineer"
+    description = "Satyam Kapoor's webspace. Blogging about DevOps, containers, kubernetes, security etc."
+    keywords = "devops, satyam, satyam kapoor, devops engineer website, devops blog, devops engineer belgium, software engineer belgium, satyamkapoor"
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "~/home"
+      logoHomeLink = "/"
+    # or
+    #
+    # path = "/img/your-example-logo.svg"
+    # alt = "Your example logo alt text"
+
+
+
+
+  # And you can even create generic menu
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/posts"
+
+  
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    pre = "<i class='fa fa-heart'></i>"
+    url        = "/about"
+    
+  
+   [[menu.main]]
+    identifier = "resume"
+    name       = "Resume"
+    url        = "/docs/satyamkapoor090521.pdf"
+
+    [[menu.main]]
+    identifier = "photography"
+    name       = "Photography"
+    url        = "https://www.flickr.com/people/satyamkapoor/"
+
+    
