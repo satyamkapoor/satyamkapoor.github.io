@@ -30,6 +30,9 @@ disqusShortname = "satyamkapoor-2"
   name = "email"
   url = "mailto:satyam@satyamkapoor.com"
 
+[[params.social]]
+  name = "mastodon"
+  url = "https://mastodon.online/@satyam"
 
 
 
