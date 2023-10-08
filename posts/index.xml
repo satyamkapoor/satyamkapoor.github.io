@@ -1,4 +1,37 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 30 Jun 2021 19:38:49 +0100</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring Apple Home With Non-Homekit Devices</title><link>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</link><pubDate>Wed, 30 Jun 2021 19:38:49 +0100</pubDate><guid>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</guid><description>Setting up apple home for your non-homekit supported devices through HomeBridge</description><content type="html"><![CDATA[<p>Thanks to the competition in IoT device market, it&rsquo;s now affordable to have some installed at home. Most devices are compatible with Google Assistant &amp; Amazon Alexa - popular AI based virtual assistant which helps you to control them using voice commands. It&rsquo;s hard to find devices compatible with with Apple&rsquo;s Siri &amp; Apple Home leaving Apple aficionados not much choice but to buy HomeKit supported products which are quite expensive.</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 13 Feb 2022 20:07:25 +0100</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>GoodBye Ads, Welcome NextDNS!</title><link>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</link><pubDate>Sun, 13 Feb 2022 20:07:25 +0100</pubDate><guid>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</guid><description>If you love PiHole but love to get it with you without setting up a VPN, then moving to nextDNS might be an option. NextDNS is a PiHole alike cloud DNS adblocker based in the EU.</description><content type="html"><![CDATA[<p>I hear you right there.</p>
+<p>I know you&rsquo;ve got browser addons like uBlockOrigin, AdGuard and rest. I understand you&rsquo;ve even moved to Brave/DuckDuckGo browser to get off Ads &amp; trackers.</p>
+<p><strong>Congratulations!</strong> These are all great ways to achieve the goal to get off trackers &amp; Ads. Not forgetting we&rsquo;re at last homosapiens and are needs are different.</p>
+<p>Here I&rsquo;m going to walk you through my route sharing the experience of the tools I used &amp; ultimately why I&rsquo;m ready shelling 20 precious Euros from my hard earned money to use NextDNS.</p>
+<h4 id="using-pihole-and-enlightenment">Using PiHole and enlightenment</h4>
+<p>PiHole is lovely!</p>
+<p>Installed it in my homenetowork, delegated it responsibility for DHCP server and Boom! Network-wide adblocking is set.</p>
+<p>How about when not at home? PiHole can be used for DNS queries if I set up a VPN at my home. Unfortunately, upload transfer rate is overly bad at my place. Even though DNS queries are light but I feel the lag. Also, I want my friends and family to use this PiHole but I my experimentation rate using home raspberry pi is so high that I can&rsquo;t break everyone&rsquo;s DNS on performing a stupid change.</p>
+<h4 id="nextdns-yes-next-not-sure-if-its-related-to-nextcloud-in-any-way">NextDNS, yes Next! Not sure if it&rsquo;s related to NextCloud in any way.</h4>
+<p>My understanding of NextDNS is, it&rsquo;s a SaaS version of PiHole. Another beauty is the app, just install it and you need to get your hands dirty with DNS settings. This is so handy for adoption by my family &amp; friends.</p>
+<h4 id="the-no-free-lunch-though">The No Free Lunch though</h4>
+<blockquote>
+<p>If it&rsquo;s free, consumer is the product.</p>
+</blockquote>
+<p>It&rsquo;s free upto 300,000 queries a month. You can always choose to go with the Pro pack which is €19.90/year. It allows Unlimited queries (ofcourse) along with ability to share it with your close family &amp; friends.</p>
+<p>Make sure to explain your family &amp; friends that you can see there logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
+<p>Here are some screenshots from nextDNS UI.</p>
+<h2 id="hahahugoshortcode-s0-hbhb">
+    <img src="/images/nextDNS/analytics_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
+
+</h2>
+<h2 id="hahahugoshortcode-s1-hbhb">
+    <img src="/images/nextDNS/analytics_graph_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
+
+</h2>
+<h2 id="hahahugoshortcode-s2-hbhb">
+    <img src="/images/nextDNS/parental_control_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
+
+</h2>
+
+    <img src="/images/nextDNS/security_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
+
+
+]]></content></item><item><title>Configuring Apple Home With Non-Homekit Devices</title><link>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</link><pubDate>Wed, 30 Jun 2021 19:38:49 +0100</pubDate><guid>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</guid><description>Setting up apple home for your non-homekit supported devices through HomeBridge</description><content type="html"><![CDATA[<p>Thanks to the competition in IoT device market, it&rsquo;s now affordable to have some installed at home. Most devices are compatible with Google Assistant &amp; Amazon Alexa - popular AI based virtual assistant which helps you to control them using voice commands. It&rsquo;s hard to find devices compatible with with Apple&rsquo;s Siri &amp; Apple Home leaving Apple aficionados not much choice but to buy HomeKit supported products which are quite expensive.</p>
 <h3 id="homebridge-to-the-rescue">Homebridge to the rescue</h3>
 <p>Homebridge is a lightweight NodeJS server which can be deployed at home to mimic iOS HomeKit API. Numerous community contributed modules of HomeBridge exists which bridges the gap between HomeKit API and 3rd party APIs provided by vendors. So my now affordable smart devices, can be used with Apple Home which also allows me to interact with them via Siri.</p>
 <h3 id="deployment">Deployment</h3>
