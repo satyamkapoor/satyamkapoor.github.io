@@ -93,7 +93,7 @@ disqusShortname = "satyamkapoor-2"
    [[menu.main]]
     identifier = "resume"
     name       = "Resume"
-    url        = "/docs/satyamkapoor090521.pdf"
+    url        = "/resume"
 
     [[menu.main]]
     identifier = "photography"
