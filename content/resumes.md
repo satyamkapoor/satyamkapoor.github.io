@@ -1,6 +1,7 @@
 ---
 title: "Resume draft"
 date: 2023-10-07T12:40:55+02:00
+draft: true
 safeHtml: true
 ---
 

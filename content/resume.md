@@ -2,10 +2,9 @@
 title: "Resume"
 date: 2023-10-08T00:31:55+02:00
 safeHtml: true
-
 ---
 
-*Prefer downloading a PDF Resume? Click Here*
+*Prefer downloading a [PDF Resume](/satyamkapoor081023.pdf)?* 
 
 # Technical Skills
 
