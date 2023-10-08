@@ -2,6 +2,7 @@
 title: "Resume"
 date: 2023-10-08T00:31:55+02:00
 safeHtml: true
+summary: "Resume of Satyam Kapoor, cloud-native site reliability engineer."
 ---
 
 *Prefer downloading a [PDF Resume](/satyamkapoor081023.pdf)?* 
