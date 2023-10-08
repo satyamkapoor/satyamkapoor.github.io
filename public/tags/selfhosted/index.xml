@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>selfhosted on Satyam Kapoor</title>
+    <link>https://satyamkapoor.com/tags/selfhosted/</link>
+    <description>Recent content in selfhosted on Satyam Kapoor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 13 Dec 2020 19:38:49 +0100</lastBuildDate><atom:link href="https://satyamkapoor.com/tags/selfhosted/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up cloud storage service using Nextcloud &amp; Docker</title>
+      <link>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</link>
+      <pubDate>Sun, 13 Dec 2020 19:38:49 +0100</pubDate>
+      
+      <guid>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</guid>
+      <description>Hosting a Nextcloud instance using Docker on raspberry pi @ home</description>
+    </item>
+    
+  </channel>
+</rss>
