@@ -1,7 +1,6 @@
 ---
 title: "Resume"
 date: 2023-10-08T00:31:55+02:00
-draft: false
 safeHtml: true
 
 ---
