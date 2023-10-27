@@ -16,6 +16,11 @@ disqusShortname = "satyamkapoor-2"
   dateformNumTime = "2006-01-02 15:04"
   enableSharingButtons = true
 
+
+[[params.social]]
+  name = "mastodon"
+  url = "https://mastodon.online/@satyam"
+
 [[params.social]]
   name = "twitter"
   url = "https://twitter.com/imsatyamkapoor"
@@ -58,10 +63,10 @@ disqusShortname = "satyamkapoor-2"
 
 [languages]
   [languages.en]
-    title = "Satyam Kapoor"
-    subtitle = "Cloud Native DevOps Engineer"
-    description = "Satyam Kapoor's webspace. Blogging about DevOps, containers, kubernetes, security etc."
-    keywords = "devops, satyam, satyam kapoor, devops engineer website, devops blog, devops engineer belgium, software engineer belgium, satyamkapoor"
+    title = "Satyam Kapoor - Cloud Native DevOps Engineer"
+    subtitle = "Exploring the World of DevOps, Containers, Kubernetes, and Security"
+    description = "Explore the insights and experiences of Satyam Kapoor, a Cloud Native DevOps Engineer. Join me on a journey through the exciting realms of DevOps, containers, Kubernetes, and cybersecurity."
+    keywords = "Satyam Kapoor, Cloud Native DevOps Engineer, DevOps, Containers, Kubernetes, Cybersecurity, DevOps Engineer Belgium, Software Engineer Belgium, Technology Blog, SatyamKapoor"
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
