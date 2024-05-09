@@ -5,7 +5,6 @@ draft: false
 cover: "/images/euroventures/belgium/satyam-kapoor-car-free-day-brussels.jpg"
 toc: true
 description: Food options in Brussels
-slug: food options options in brussels
 tags:
 - food
 categories:
