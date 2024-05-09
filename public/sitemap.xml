@@ -2,73 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://satyamkapoor.com/categories/belgium/</loc>
+    <loc>http://localhost:1313/categories/belgium/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/euroventures/culinary-delights-in-belgium/</loc>
+    <loc>http://localhost:1313/euroventures/culinary-delights-in-belgium/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/food/</loc>
+    <loc>http://localhost:1313/tags/food/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/categories/food/</loc>
+    <loc>http://localhost:1313/categories/food/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/resume/</loc>
+    <loc>http://localhost:1313/resume/</loc>
     <lastmod>2023-10-08T00:31:55+02:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/dns/</loc>
+    <loc>http://localhost:1313/tags/dns/</loc>
     <lastmod>2022-02-13T20:07:25+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</loc>
+    <loc>http://localhost:1313/posts/goodbye-trackers-welcome-nextdns/</loc>
     <lastmod>2022-02-13T20:07:25+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2022-02-13T20:07:25+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/privacy/</loc>
+    <loc>http://localhost:1313/tags/privacy/</loc>
     <lastmod>2022-02-13T20:07:25+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/categories/tech/</loc>
+    <loc>http://localhost:1313/categories/tech/</loc>
     <lastmod>2022-02-13T20:07:25+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/apple/</loc>
+    <loc>http://localhost:1313/tags/apple/</loc>
     <lastmod>2021-06-30T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</loc>
+    <loc>http://localhost:1313/posts/apple-home-for-non-homekit-devices/</loc>
     <lastmod>2021-06-30T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/homekit/</loc>
+    <loc>http://localhost:1313/tags/homekit/</loc>
     <lastmod>2021-06-30T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/iot/</loc>
+    <loc>http://localhost:1313/tags/iot/</loc>
     <lastmod>2021-06-30T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/siri/</loc>
+    <loc>http://localhost:1313/tags/siri/</loc>
     <lastmod>2021-06-30T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/raspberrypi/</loc>
+    <loc>http://localhost:1313/tags/raspberrypi/</loc>
     <lastmod>2020-12-13T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/tags/selfhosted/</loc>
+    <loc>http://localhost:1313/tags/selfhosted/</loc>
     <lastmod>2020-12-13T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</loc>
+    <loc>http://localhost:1313/posts/setting-up-cloud-storage-service-using-nextcloud/</loc>
     <lastmod>2020-12-13T19:38:49+01:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://satyamkapoor.com/posts/ddns-raspberry-pi/</loc>
+    <loc>http://localhost:1313/posts/ddns-raspberry-pi/</loc>
     <lastmod>2020-09-24T00:00:00+00:00</lastmod>
   </url>
 </urlset>
