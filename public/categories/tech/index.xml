@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech on Satyam Kapoor | DevOps Engineer</title>
+    <link>https://satyamkapoor.com/categories/tech/</link>
+    <description>Recent content in Tech on Satyam Kapoor | DevOps Engineer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Feb 2022 20:07:25 +0100</lastBuildDate>
+    <atom:link href="https://satyamkapoor.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GoodBye Ads, Welcome NextDNS!</title>
+      <link>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</link>
+      <pubDate>Sun, 13 Feb 2022 20:07:25 +0100</pubDate>
+      <guid>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</guid>
+      <description>If you love PiHole but love to get it with you without setting up a VPN, then moving to nextDNS might be an option. NextDNS is a PiHole alike cloud DNS adblocker based in the EU.</description>
+    </item>
+    <item>
+      <title>Configuring Apple Home With Non-Homekit Devices</title>
+      <link>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</link>
+      <pubDate>Wed, 30 Jun 2021 19:38:49 +0100</pubDate>
+      <guid>https://satyamkapoor.com/posts/apple-home-for-non-homekit-devices/</guid>
+      <description>Setting up apple home for your non-homekit supported devices through HomeBridge</description>
+    </item>
+    <item>
+      <title>Setting up cloud storage service using Nextcloud &amp; Docker</title>
+      <link>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</link>
+      <pubDate>Sun, 13 Dec 2020 19:38:49 +0100</pubDate>
+      <guid>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</guid>
+      <description>Hosting a Nextcloud instance using Docker on raspberry pi @ home</description>
+    </item>
+    <item>
+      <title>DDNS for raspberry pi</title>
+      <link>https://satyamkapoor.com/posts/ddns-raspberry-pi/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://satyamkapoor.com/posts/ddns-raspberry-pi/</guid>
+      <description>A python script to regularly update DNS with your unstable home IP</description>
+    </item>
+  </channel>
+</rss>
