@@ -6,8 +6,15 @@
     <description>Recent content on Satyam Kapoor | DevOps Engineer</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 09 May 2024 22:00:01 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2024 00:11:51 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Food in Belgium</title>
+      <link>http://localhost:1313/euroventures/food-in-belgium/</link>
+      <pubDate>Fri, 10 May 2024 00:11:51 +0200</pubDate>
+      <guid>http://localhost:1313/euroventures/food-in-belgium/</guid>
+      <description>test</description>
+    </item>
     <item>
       <title>Culinary Delights in Belgium</title>
       <link>http://localhost:1313/euroventures/culinary-delights-in-belgium/</link>
@@ -21,6 +28,13 @@
       <pubDate>Sun, 08 Oct 2023 00:31:55 +0200</pubDate>
       <guid>http://localhost:1313/resume/</guid>
       <description>Resume of Satyam Kapoor, cloud-native site reliability engineer.</description>
+    </item>
+    <item>
+      <title>Resume draft</title>
+      <link>http://localhost:1313/resumes/</link>
+      <pubDate>Sat, 07 Oct 2023 12:40:55 +0200</pubDate>
+      <guid>http://localhost:1313/resumes/</guid>
+      <description>Technology&#xA;DAY to DAY Comfort&#xA;Docker, Kubernetes, Docker-Swarm AWS, Azure, DigitalOcean, GCP Jenkins, CircleCi Git, Github, Bitbucket Ansible, Terraform Python, Java (Spring), PHP, JS (Angular) nginx, apache2 Expertise&#xA;Infrastructure as a Code CI/CD Pipeline design&#xA;Security&#xA;Authentication &amp; Authorisation&#xA;System architecture design&#xA;Site Reliability Engineer&#xA;DPG Media, Brussels Belgium&#xA;`20 May, 2022 - Present` I worked as a software engineer at DPG Media, where I focused on various aspects of site reliability engineering, ensuring the availability and performance of our systems.</description>
     </item>
     <item>
       <title>GoodBye Ads, Welcome NextDNS!</title>
