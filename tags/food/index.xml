@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Food on Satyam Kapoor | DevOps Engineer</title>
+    <link>http://localhost:1313/tags/food/</link>
+    <description>Recent content in Food on Satyam Kapoor | DevOps Engineer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 09 May 2024 22:00:01 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/food/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Culinary Delights in Belgium</title>
+      <link>http://localhost:1313/euroventures/food-options-options-in-brussels/</link>
+      <pubDate>Thu, 09 May 2024 22:00:01 +0200</pubDate>
+      <guid>http://localhost:1313/euroventures/food-options-options-in-brussels/</guid>
+      <description>Best food places in Brussels curated by Satyam Kapoor</description>
+    </item>
+  </channel>
+</rss>
