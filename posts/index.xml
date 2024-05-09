@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor | DevOps Engineer</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor | DevOps Engineer</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 13 Feb 2022 20:07:25 +0100</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>GoodBye Ads, Welcome NextDNS!</title><link>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</link><pubDate>Sun, 13 Feb 2022 20:07:25 +0100</pubDate><guid>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</guid><description>If you love PiHole but love to get it with you without setting up a VPN, then moving to nextDNS might be an option. NextDNS is a PiHole alike cloud DNS adblocker based in the EU.</description><content type="html"><![CDATA[<p>I hear you right there.</p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor | DevOps Engineer</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor | DevOps Engineer</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 13 Feb 2022 20:07:25 +0100</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>GoodBye Ads, Welcome NextDNS!</title><link>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</link><pubDate>Sun, 13 Feb 2022 20:07:25 +0100</pubDate><guid>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</guid><description>If you love PiHole but love to get it with you without setting up a VPN, then moving to nextDNS might be an option. NextDNS is a PiHole alike cloud DNS adblocker based in the EU.</description><content type="html"><![CDATA[<p>I hear you right there.</p>
 <p>I know you&rsquo;ve got browser addons like uBlockOrigin, AdGuard and rest. I understand you&rsquo;ve even moved to Brave/DuckDuckGo browser to get off Ads &amp; trackers.</p>
 <p><strong>Congratulations!</strong> These are all great ways to achieve the goal to get off trackers &amp; Ads. Not forgetting we&rsquo;re at last homosapiens and are needs are different.</p>
 <p>Here I&rsquo;m going to walk you through my route sharing the experience of the tools I used &amp; ultimately why I&rsquo;m ready shelling 20 precious Euros from my hard earned money to use NextDNS.</p>
@@ -15,15 +15,15 @@
 <p>It&rsquo;s free upto 300,000 queries a month. You can always choose to go with the Pro pack which is €19.90/year. It allows Unlimited queries (ofcourse) along with ability to share it with your close family &amp; friends.</p>
 <p>Make sure to explain your family &amp; friends that you can see there logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
 <p>Here are some screenshots from nextDNS UI.</p>
-<h2 id="hahahugoshortcode-s0-hbhb">
+<h2 id="hahahugoshortcode8s0hbhb">
     <img src="/images/nextDNS/analytics_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode-s1-hbhb">
+<h2 id="hahahugoshortcode8s1hbhb">
     <img src="/images/nextDNS/analytics_graph_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode-s2-hbhb">
+<h2 id="hahahugoshortcode8s2hbhb">
     <img src="/images/nextDNS/parental_control_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
@@ -36,7 +36,7 @@
 <p>Homebridge is a lightweight NodeJS server which can be deployed at home to mimic iOS HomeKit API. Numerous community contributed modules of HomeBridge exists which bridges the gap between HomeKit API and 3rd party APIs provided by vendors. So my now affordable smart devices, can be used with Apple Home which also allows me to interact with them via Siri.</p>
 <h3 id="deployment">Deployment</h3>
 <p>Homebridge can be installed using a lot of native &amp; non-native ways but the easiest/fastest can be using Docker. As it needs to be up always, installing on a raspberry pi can be a viable option. Once the container is up, open http://yourip:8521 in your browser and login with the default admin credentials.</p>
-<p><img src="/images/homebridge_ui.png" alt="HomeBridge UI"></p>
+<p><img alt="HomeBridge UI" src="/images/homebridge_ui.png"></p>
 <p>The web UI is intuitive and will allow you to install modules and add your IoT devices.</p>
 <h3 id="experience">Experience</h3>
 <p>With the Home app, devices (aka accessories) can be added by scanning HomeKit Setup Code which is available in the UI of Homebridge. Once done, rooms can be created and the UI customized to add accessories.</p>
@@ -98,54 +98,54 @@
 <p>Since I had a 1TB Hard disk along with a raspberry pi 3b+ lying around, I decided to save on some money and use these stuff.</p>
 <h4 id="how-to-host">How to host?</h4>
 <p>I decided to use mariadb server along with Nextcloud. So I started two docker containers with mariadb-server and Nextcloud images respectively. Here&rsquo;s the docker-compose file you can use to set Nextcloud &amp; Mariadb. I went ahead using mounted 1TB HDD with Nextcloud container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">nextcloud</span>:
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nextcloud:apache</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-    <span style="color:#f92672">ports</span>:
-      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">80</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#ae81ff">/mnt/hdd/nexctcloud_data:/var/www/html</span>
-    <span style="color:#f92672">networks</span>:
-      - <span style="color:#ae81ff">nextcloud-network</span>
-    <span style="color:#f92672">environment</span>:
-      - <span style="color:#ae81ff">MYSQL_HOST=db</span>
-      - <span style="color:#ae81ff">MYSQL_DATABASE=nextcloud</span>
-      - <span style="color:#ae81ff">MYSQL_USER=nextcloud</span>
-      - <span style="color:#ae81ff">MYSQL_PASSWORD=nextcloud</span>
-  <span style="color:#f92672">db</span>:
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mariadb</span>
-    <span style="color:#f92672">command</span>: --<span style="color:#ae81ff">transaction-isolation=READ-COMMITTED --binlog-format=ROW</span>
-    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
-    <span style="color:#f92672">volumes</span>:
-      - <span style="color:#ae81ff">/mnt/hdd/mariadb_data:/var/lib/mysql</span>
-    <span style="color:#f92672">networks</span>:
-      - <span style="color:#ae81ff">nextcloud-network</span>
-    <span style="color:#f92672">environment</span>:
-      - <span style="color:#ae81ff">MYSQL_DATABASE=nextcloud</span>
-      - <span style="color:#ae81ff">MYSQL_USER=nextcloud</span>
-      - <span style="color:#ae81ff">MYSQL_ROOT_PASSWORD=nextcloud</span>
-      - <span style="color:#ae81ff">MYSQL_PASSWORD=nextcloud</span>
-      - <span style="color:#ae81ff">NEXTCLOUD_TRUSTED_DOMAINS=cloud.mydomain.com playground.mydomain.com 192.168.0.65</span>
-
-<span style="color:#f92672">networks</span>:
-  <span style="color:#f92672">nextcloud-network</span>:
-</code></pre></div><p>I had apache2 installed on my pi running pi-hole. So I decided to set a reverse proxy going to the Nextcloud container which was being exposed on port 8080. Here&rsquo;s the <strong>Apache&rsquo;s VHost Configuration</strong>. Note I make sure the <code>/.well-known/acme-challenge</code> path is not proxied. This comes in handy to use certbot for SSL certificate generation from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#960050;background-color:#1e0010">*:80</span><span style="color:#f92672">&gt;</span>
-    ServerName cloud.abc.com
-    ProxyPass /.well-known/acme-challenge ! #For DNS verification by Let&#39;s Encrypt
-    ProxyPass / http://localhost:8080/
-    ProxyPassReverse / http://localhost:8080/
-
-
-RewriteEngine on
-RewriteCond %{SERVER_NAME} =cloud.abc.com
-RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
-<span style="color:#f92672">&lt;/VirtualHost&gt;</span>
-</code></pre></div><p>The very first time when you&rsquo;ll try opening Nextcloud, it will prompt you to set your credentials and configurutation for the database server instance.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">nextcloud</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nextcloud:apache</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/mnt/hdd/nexctcloud_data:/var/www/html</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">nextcloud-network</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_HOST=db</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_DATABASE=nextcloud</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_USER=nextcloud</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_PASSWORD=nextcloud</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">db</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mariadb</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: --<span style="color:#ae81ff">transaction-isolation=READ-COMMITTED --binlog-format=ROW</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/mnt/hdd/mariadb_data:/var/lib/mysql</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">nextcloud-network</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_DATABASE=nextcloud</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_USER=nextcloud</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_ROOT_PASSWORD=nextcloud</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">MYSQL_PASSWORD=nextcloud</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">NEXTCLOUD_TRUSTED_DOMAINS=cloud.mydomain.com playground.mydomain.com 192.168.0.65</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">networks</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">nextcloud-network</span>:
+</span></span></code></pre></div><p>I had apache2 installed on my pi running pi-hole. So I decided to set a reverse proxy going to the Nextcloud container which was being exposed on port 8080. Here&rsquo;s the <strong>Apache&rsquo;s VHost Configuration</strong>. Note I make sure the <code>/.well-known/acme-challenge</code> path is not proxied. This comes in handy to use certbot for SSL certificate generation from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#960050;background-color:#1e0010">*:80</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    ServerName cloud.abc.com
+</span></span><span style="display:flex;"><span>    ProxyPass /.well-known/acme-challenge ! #For DNS verification by Let&#39;s Encrypt
+</span></span><span style="display:flex;"><span>    ProxyPass / http://localhost:8080/
+</span></span><span style="display:flex;"><span>    ProxyPassReverse / http://localhost:8080/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RewriteEngine on
+</span></span><span style="display:flex;"><span>RewriteCond %{SERVER_NAME} =cloud.abc.com
+</span></span><span style="display:flex;"><span>RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/VirtualHost&gt;</span>
+</span></span></code></pre></div><p>The very first time when you&rsquo;ll try opening Nextcloud, it will prompt you to set your credentials and configurutation for the database server instance.
 Once done, your personal cloud should be ready.</p>
-<p><img src="/nextcloud_login.jpg" alt="Example image"></p>
+<p><img alt="Example image" src="/nextcloud_login.jpg"></p>
 <h4 id="apps-to-install-on-nextcloud-hub">Apps to install on Nextcloud hub</h4>
 <p>Nextcloud hub is filled with great apps. Some of the apps which I&rsquo;ll personally recommend are:</p>
 <ul>
@@ -156,9 +156,9 @@ Once done, your personal cloud should be ready.</p>
 </ul>
 <h4 id="applications-for-android">Applications for Android</h4>
 <p><strong><a href="https://apps.nextcloud.com/apps/davx5_caldav_carddav_sync_suite_on_android">DAVx5</a></strong> - Syncs contacts &amp; calendars bidirectionally from my phone &amp; pi</p>
-<p><strong><a href="https://play.google.com/store/apps/details?id=com.nextcloud.client&amp;hl=en&amp;gl=US">Nextcloud</a></strong> - The official nextcloud app. You&rsquo;ll have to enter your credentials and things are good to go. Provides functionality to auto upload images (similar to Google Photos - Auto Backup).</p>
+<p><strong><a href="https://play.google.com/store/apps/details?id=com.nextcloud.client&hl=en&gl=US">Nextcloud</a></strong> - The official nextcloud app. You&rsquo;ll have to enter your credentials and things are good to go. Provides functionality to auto upload images (similar to Google Photos - Auto Backup).</p>
 <p><strong><a href="https://f-droid.org/de/packages/net.eneiluj.nextcloud.phonetrack/">Phonetrack</a></strong> - <em>Find my Phone</em> like functionality with just Google not storing or knowing where your phone is.</p>
-<p><strong><a href="https://play.google.com/store/apps/details?id=it.niedermann.owncloud.notes&amp;hl=en&amp;gl=US">Notes</a></strong> - A <em>Google Keep</em> alternative. A note-taking app where all your notes are stored on your nextcloud server as .txt</p>
+<p><strong><a href="https://play.google.com/store/apps/details?id=it.niedermann.owncloud.notes&hl=en&gl=US">Notes</a></strong> - A <em>Google Keep</em> alternative. A note-taking app where all your notes are stored on your nextcloud server as .txt</p>
 <h4 id="downsides-of-nextcloud-or-the-whole-process">Downsides of nextcloud or the whole process</h4>
 <ul>
 <li>Internet speed: I have a DSL at home with slow speed which means whenever I&rsquo;m trying to access a file, it is trying to upload it at the rate of <em>9.75 Mbit/s</em>.</li>
@@ -178,7 +178,7 @@ Upload: 9.75 Mbit/s
 <li>Conflicts while auto-uploading images</li>
 </ul>
 <p>This error keeps appearing back. The impact isn&rsquo;t much because it does upload all files but the notification is annoying. I&rsquo;ll update you once I&rsquo;ve figured out the root cause here.</p>
-<p><img src="/nextcloud_sync.jpg" alt="Nextcloud issues"></p>
+<p><img alt="Nextcloud issues" src="/nextcloud_sync.jpg"></p>
 <h4 id="overall">Overall?</h4>
 <p>Nextcloud is free, open-source &amp; has a huge community of developers. My current issues are mostly related to my efforts to save costs. If I&rsquo;d be hosting this on Linode or DigitalOcean the experience should be smoother.</p>
 <p>I&rsquo;m still happy that my data is in my control and I&rsquo;m able to associate my domain with my cloud storage.</p>
@@ -203,47 +203,47 @@ Upload: 9.75 Mbit/s
 <h4 id="solution">Solution</h4>
 <p>You can setup a subdomain/domain with your home public IP address (say an A record for home.example.com or pi.example.com which points to your public IP). Then run a script which periodically checks if your home public IP has been changed &amp; updates the DNS accordingly.</p>
 <p>Here, I have written a tiny script which checks if my current home IP has changed. If positive, it updates the DNS <em>A record</em> associated with my home domain.</p>
-<p>I manage my DNS with digitalocean (<a href="http://www.digitalocean.com">www.digitalocean.com</a> = DO). DO provides a REST API which can be used to update your configuration.</p>
+<p>I manage my DNS with digitalocean (<a href="https://www.digitalocean.com">www.digitalocean.com</a> = DO). DO provides a REST API which can be used to update your configuration.</p>
 <p>Assuming I have created a A record with name mypi.satyamkapoor.com with a value of myPublicIP in DO DNS. I&rsquo;ll first have to get the <code>id</code> of the domain record. You can do this by</p>
-<pre tabindex="0"><code>curl -X GET -H &quot;Content-Type: application/json&quot; -H &quot;Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582&quot; &quot;https://api.digitalocean.com/v2/domains/example.com/records&quot;
+<pre tabindex="0"><code>curl -X GET -H &#34;Content-Type: application/json&#34; -H &#34;Authorization: Bearer b7d03a6947b217efb6f3ec3bd3504582&#34; &#34;https://api.digitalocean.com/v2/domains/example.com/records&#34;
 </code></pre><p>Once you have your domain record id, you can set up the following Python script as a cron which will update your DNS A record whenever your home IP has been changed.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> subprocess<span style="color:#f92672">,</span> requests<span style="color:#f92672">,</span> logging<span style="color:#f92672">,</span> shlex
-
-API_SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_DIGITAL_OCEAN_API_KEY&#34;</span> 
-DOMAIN_RECORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yourdomainrecordID&#34;</span>
-DOMAIN_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example.com&#34;</span>
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getCurrentIP</span>():
-  cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dig @resolver1.opendns.com ANY -4 myip.opendns.com +short&#39;</span>
-  proc<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>Popen(shlex<span style="color:#f92672">.</span>split(cmd),stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE)
-  out,err<span style="color:#f92672">=</span>proc<span style="color:#f92672">.</span>communicate()
-  currentIPv4 <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;UTF-8&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
-  <span style="color:#66d9ef">return</span> currentIPv4
-
-<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">validateAndUpdateIPLocally</span>(currentIP):
-        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;current_ip.txt&#39;</span>,<span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> inputfile:
-                lines <span style="color:#f92672">=</span> inputfile<span style="color:#f92672">.</span>readlines()
-                <span style="color:#66d9ef">if</span> lines:
-                        lineCounter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-                        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
-                                lineCounter <span style="color:#f92672">=</span> lineCounter <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-                                <span style="color:#66d9ef">if</span> lineCounter <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
-                                        <span style="color:#66d9ef">if</span> currentIP <span style="color:#f92672">==</span> line:
-                                                <span style="color:#66d9ef">break</span>
-                                        <span style="color:#66d9ef">else</span>:
-                                                fileUpdate <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;current_ip.txt&#34;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
-                                                fileUpdate<span style="color:#f92672">.</span>write(currentIP)
-                                                url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.digitalocean.com/v2/domains/&#34;</span><span style="color:#f92672">+</span> DOMAIN_NAME <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/records/&#34;</span> <span style="color:#f92672">+</span> DOMAIN_RECORD
-                                                headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Content-Type&#39;</span>:<span style="color:#e6db74">&#39;application/json&#39;</span>,<span style="color:#e6db74">&#39;Authorization&#39;</span>: <span style="color:#e6db74">&#39;Bearer &#39;</span> <span style="color:#f92672">+</span> API_SECRET}
-                                                payload <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;data&#34;</span>: currentIP}
-                                                r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(url, headers<span style="color:#f92672">=</span>headers, json <span style="color:#f92672">=</span> payload)
-                                                logging<span style="color:#f92672">.</span>basicConfig(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;HomeIPV4.log&#39;</span>,level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>DEBUG,format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>, datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%Y %I:%M:%S %p&#39;</span>)
-                                                logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;Text:&#39;</span><span style="color:#f92672">+</span>r<span style="color:#f92672">.</span>text<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; status code &#34;</span><span style="color:#f92672">+</span> str(r<span style="color:#f92672">.</span>status_code) )
-
-
-currentIP <span style="color:#f92672">=</span> getCurrentIP()
-validateAndUpdateIPLocally(currentIP)
-</code></pre></div><p>This script will use two files namely <code>current_ip.txt</code> and <code>HomeIPV4.log</code> for storing the current live public IP and logs of the script respectively.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess<span style="color:#f92672">,</span> requests<span style="color:#f92672">,</span> logging<span style="color:#f92672">,</span> shlex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>API_SECRET <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;YOUR_DIGITAL_OCEAN_API_KEY&#34;</span> 
+</span></span><span style="display:flex;"><span>DOMAIN_RECORD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;yourdomainrecordID&#34;</span>
+</span></span><span style="display:flex;"><span>DOMAIN_NAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example.com&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">getCurrentIP</span>():
+</span></span><span style="display:flex;"><span>  cmd<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dig @resolver1.opendns.com ANY -4 myip.opendns.com +short&#39;</span>
+</span></span><span style="display:flex;"><span>  proc<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>Popen(shlex<span style="color:#f92672">.</span>split(cmd),stdout<span style="color:#f92672">=</span>subprocess<span style="color:#f92672">.</span>PIPE)
+</span></span><span style="display:flex;"><span>  out,err<span style="color:#f92672">=</span>proc<span style="color:#f92672">.</span>communicate()
+</span></span><span style="display:flex;"><span>  currentIPv4 <span style="color:#f92672">=</span> out<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;UTF-8&#39;</span>)<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> currentIPv4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">validateAndUpdateIPLocally</span>(currentIP):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;current_ip.txt&#39;</span>,<span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> inputfile:
+</span></span><span style="display:flex;"><span>                lines <span style="color:#f92672">=</span> inputfile<span style="color:#f92672">.</span>readlines()
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> lines:
+</span></span><span style="display:flex;"><span>                        lineCounter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
+</span></span><span style="display:flex;"><span>                                lineCounter <span style="color:#f92672">=</span> lineCounter <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                                <span style="color:#66d9ef">if</span> lineCounter <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">if</span> currentIP <span style="color:#f92672">==</span> line:
+</span></span><span style="display:flex;"><span>                                                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                                                fileUpdate <span style="color:#f92672">=</span> open(<span style="color:#e6db74">&#34;current_ip.txt&#34;</span>, <span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span>                                                fileUpdate<span style="color:#f92672">.</span>write(currentIP)
+</span></span><span style="display:flex;"><span>                                                url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.digitalocean.com/v2/domains/&#34;</span><span style="color:#f92672">+</span> DOMAIN_NAME <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/records/&#34;</span> <span style="color:#f92672">+</span> DOMAIN_RECORD
+</span></span><span style="display:flex;"><span>                                                headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Content-Type&#39;</span>:<span style="color:#e6db74">&#39;application/json&#39;</span>,<span style="color:#e6db74">&#39;Authorization&#39;</span>: <span style="color:#e6db74">&#39;Bearer &#39;</span> <span style="color:#f92672">+</span> API_SECRET}
+</span></span><span style="display:flex;"><span>                                                payload <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;data&#34;</span>: currentIP}
+</span></span><span style="display:flex;"><span>                                                r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>put(url, headers<span style="color:#f92672">=</span>headers, json <span style="color:#f92672">=</span> payload)
+</span></span><span style="display:flex;"><span>                                                logging<span style="color:#f92672">.</span>basicConfig(filename<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;HomeIPV4.log&#39;</span>,level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>DEBUG,format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>, datefmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%Y %I:%M:%S %p&#39;</span>)
+</span></span><span style="display:flex;"><span>                                                logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#39;Text:&#39;</span><span style="color:#f92672">+</span>r<span style="color:#f92672">.</span>text<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; status code &#34;</span><span style="color:#f92672">+</span> str(r<span style="color:#f92672">.</span>status_code) )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>currentIP <span style="color:#f92672">=</span> getCurrentIP()
+</span></span><span style="display:flex;"><span>validateAndUpdateIPLocally(currentIP)
+</span></span></code></pre></div><p>This script will use two files namely <code>current_ip.txt</code> and <code>HomeIPV4.log</code> for storing the current live public IP and logs of the script respectively.</p>
 <p>I&rsquo;ll try to extend this script for AWS Route53 soon.</p>
 <p>Thanks for reading please feel free to message me in case of suggestions or queries.</p>
 ]]></content></item></channel></rss>
