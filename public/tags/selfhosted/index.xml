@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Selfhosted on Satyam Kapoor | DevOps Engineer</title>
-    <link>https://satyamkapoor.com/tags/selfhosted/</link>
+    <link>http://localhost:1313/tags/selfhosted/</link>
     <description>Recent content in Selfhosted on Satyam Kapoor | DevOps Engineer</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 13 Dec 2020 19:38:49 +0100</lastBuildDate>
-    <atom:link href="https://satyamkapoor.com/tags/selfhosted/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/selfhosted/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up cloud storage service using Nextcloud &amp; Docker</title>
-      <link>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</link>
+      <link>http://localhost:1313/posts/setting-up-cloud-storage-service-using-nextcloud/</link>
       <pubDate>Sun, 13 Dec 2020 19:38:49 +0100</pubDate>
-      <guid>https://satyamkapoor.com/posts/setting-up-cloud-storage-service-using-nextcloud/</guid>
+      <guid>http://localhost:1313/posts/setting-up-cloud-storage-service-using-nextcloud/</guid>
       <description>Hosting a Nextcloud instance using Docker on raspberry pi @ home</description>
     </item>
   </channel>
