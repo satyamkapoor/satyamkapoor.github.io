@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://satyamkapoor.com/euroventures/food-in-belgium/</loc>
-    <lastmod>2024-05-10T00:11:51+02:00</lastmod>
-  </url><url>
-    <loc>https://satyamkapoor.com/</loc>
-    <lastmod>2024-05-10T00:11:51+02:00</lastmod>
-  </url><url>
     <loc>https://satyamkapoor.com/categories/belgium/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
@@ -23,8 +17,14 @@
     <loc>https://satyamkapoor.com/categories/food/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
   </url><url>
+    <loc>https://satyamkapoor.com/</loc>
+    <lastmod>2024-05-09T22:00:01+02:00</lastmod>
+  </url><url>
     <loc>https://satyamkapoor.com/tags/</loc>
     <lastmod>2024-05-09T22:00:01+02:00</lastmod>
+  </url><url>
+    <loc>https://satyamkapoor.com/euroventures/</loc>
+    <lastmod>2024-05-09T21:43:28+02:00</lastmod>
   </url><url>
     <loc>https://satyamkapoor.com/resume/</loc>
     <lastmod>2023-10-08T00:31:55+02:00</lastmod>
