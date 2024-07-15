@@ -1,32 +1,36 @@
 {{ define "main" }}
-    <main aria-role="main">
+<main aria-role="main">
+    <div>
+        {{ if .Site.Params.Portrait.Path }}
+        <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}"
+            style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+        {{ end }}
+
+        <h1>Satyam Kapoor</h1>
+
+
+
+        {{- with .Site.Params.social }}
         <div>
-            {{ if .Site.Params.Portrait.Path }}
-               <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
-            {{ end }}
+            {{ partial "social-icons.html" . }}
+        </div>
+        <p style="margin-left: 20%;margin-right:20%;text-align:justify">Hey there! I'm a software developer and DevOps
+            enthusiast with Indian roots, now thriving in Frankfurt, Germany. <br><br>
+            
+            Dive into my world of Cloud computing,
+            DevOps strategies, Linux expertise, and cybersecurity in my <a href="posts">blog</a>. Psst... I've also got
+            a <a href="journal">journal</a> where I share glimpses of my daily adventures. Curious? Click here to
+            explore <a href="about">my story</a> </p>
 
-            <h1>Satyam Kapoor</h1>
 
 
-  
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
-                </div>
-                <p style="margin-left: 20%;margin-right:20%;text-align:justify"> Hi, I'm a software developer & devOps enthusiast. I'm from India, living & working in Belgium.
+        {{- end }}
 
-                    On this website you'll find some information <a href="about">about me</a>, and a few <a href="posts">blog posts</a> which I wrote & are mostly related to the topics I'm passionate about - Cloud, DevOps, Linux, Security & more.
-                </p>
+        &nbsp;&nbsp;
 
- 
 
-            {{- end }}
 
-                &nbsp;&nbsp;
-
-          
-
-<!-- <button onclick="getLocation()">Get My Location</button>
+        <!-- <button onclick="getLocation()">Get My Location</button>
 <div id="location-info"></div>
 
 <script>
@@ -66,6 +70,6 @@
             <li  style="list-style-type: none"><span><a style="text-decoration: none" href="{{ .Permalink }}"><span style="font-style: italic;">{{ .Title }}</span> {{.Date.Format "Jan 2, 2006"}}</a></li>
           {{end}}
           </p> -->
-        </div>
-    </main>
+    </div>
+</main>
 {{ end }}

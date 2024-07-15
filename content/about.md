@@ -1,7 +1,7 @@
 +++
 title = "About"
 date = "2020-10-09"
-summary = "Meet Satyam Kapoor, a passionate DevOps engineer based in Belgium, specializing in cloud infrastructure, Kubernetes, and technology best practices."
+summary = "Meet Satyam Kapoor, a passionate DevOps engineer based in Germany, specializing in cloud infrastructure, Kubernetes, and technology best practices."
 [ author ]
   name = "Satyam"
 +++
@@ -9,9 +9,9 @@ summary = "Meet Satyam Kapoor, a passionate DevOps engineer based in Belgium, sp
 
 ## Hello there, I'm Satyam
 
-I'm an SRE (Site Reliability Engineer) actively shaping infrastructure at DPG Media Belgium. With nearly five years of experience, I've worked across various cloud platforms, including AWS, Azure, DigitalOcean, Hetzner, Linode, Oracle Cloud, and more. My work centers around optimizing cloud environments, crafting resilient, efficient systems, and implementing best practices in cloud technology and Linux systems.
+Having recently transitioned from DPG Media in Belgium to DE-CIX in Frankfurt, Germany, I am an SRE (Site Reliability Engineer) actively involved in shaping infrastructure at DPG Media Belgium. With close to five years of experience, I have worked extensively across diverse cloud platforms such as AWS, Azure, DigitalOcean, Hetzner, Linode, Oracle Cloud, and more. My focus lies in optimizing cloud environments, building resilient and efficient systems, and implementing best practices in cloud technology and Linux systems.
 
-My passion is ensuring that engineers are unblocked and can work seamlessly, regardless of the cloud environment they operate in. I'm committed to learning and adapting to new challenges, keeping pace with the ever-evolving tech landscape. I'm dedicated to sharing knowledge and helping others navigate the complexities of technology. Whether you're interested in cloud infrastructure, Kubernetes, DevOps, MLOps, or simply want to connect, don't hesitate to reach out. Let's collaborate to drive progress in the tech world.
+My dedication lies in ensuring engineers are unblocked and can operate seamlessly across various cloud environments. I am committed to continuous learning, adapting to new challenges, and staying abreast of the ever-evolving tech landscape. I am passionate about sharing knowledge and assisting others in navigating the complexities of technology. Whether you are interested in cloud infrastructure, Kubernetes, DevOps, MLOps, or simply wish to connect, feel free to reach out. Let's collaborate to drive progress in the tech realm
 
 ### Stuff I like
 
