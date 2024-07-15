@@ -1,5 +1,5 @@
 baseurl      = "https://satyamkapoor.com"
-title        = "Satyam Kapoor | DevOps Engineer"
+title        = "Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 paginate     = 10
@@ -15,8 +15,10 @@ disqusShortname = "satyamkapoor-2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
   enableSharingButtons = true
+  Author = "Satyam Kapoor"
   images = [""]
-
+  description = "Satyam Kapoor's webspace. Blogging on Kubernetes, devOps, docker, automation, security, life in Europe etc."
+  keywords = "Satyam Kapoor, SRE, Germany, Kubernetes, DevOps, Docker, automation, security, technology, blog"
 
 [[params.social]]
   name = "mastodon"
@@ -39,11 +41,6 @@ disqusShortname = "satyamkapoor-2"
 
 
 
-
-
-  # Subtitle for home
-  homeSubtitle = "Hi, I'm a software devoper & devOps enthusiast. I'm from India, living & working in Belgium."
-  homeSubtitleTwo = "On this website you'll find some information about me, and a few blog posts which I wrote which are mostly related to the topics I'm passionate about - Cloud, DevOps, Linux, Security & more. You can find me on Twitter, LinkedIn & Github."
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
@@ -51,7 +48,7 @@ disqusShortname = "satyamkapoor-2"
   enableSharingButtons = true
 
   # Metadata mostly used in document's head
-  description = "Satyam Kapoor's webspace. Blogging on Kubernetes, devOps, docker, automation, security etc."
+  description = "Satyam Kapoor's webspace. SRE based in Germany. Blogging on Kubernetes, devOps, docker, automation, security etc."
   keywords = ""
   images = [""]
 
