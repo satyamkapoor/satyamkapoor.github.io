@@ -12,7 +12,7 @@ date: 2024-07-15T21:34:08+02:00
 draft: false
 ---
 
-Having grown accustomed to receiving one-time passwords via SMS for user authentication back in India, my transition to Belgium introduced me to the convenience of e-ID cards and TOPS for authentication.
+Having grown accustomed to receiving one-time passwords via SMS for user authentication back in India, my transition to Belgium introduced me to the convenience of e-ID cards and TOTPs for authentication.
 
 However, my move to Germany unveiled a unique authentication process across various applications. Whether it's filing taxes, accessing health insurance apps for digital health records, or managing deliveries through the DHL app, I found myself relying on codes sent to my mailbox for verification. The shift to this method has been both surprising and intriguing! 😮
 
