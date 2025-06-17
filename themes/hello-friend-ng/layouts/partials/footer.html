@@ -2,8 +2,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; {{ now.Format "2006" }}</span>
-            {{ if .Site.Author.name }}
-                <span>{{ .Site.Author.name }}</span>
+            {{ if .Site.Params.Author.name }}
+                <span>{{ .Site.Params.Author.name }}</span>
             {{ end }}
                 
           

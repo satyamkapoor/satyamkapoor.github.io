@@ -2,23 +2,27 @@ baseurl      = "https://satyamkapoor.com"
 title        = "Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-paginate     = 10
-defaultContentLanguage = "en"
-disqusShortname = "satyamkapoor-2"
 
-[Author]
-  name = "Satyam Kapoor"
+defaultContentLanguage = "en"
+
+pagination.pagerSize = 10
+
+
 
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
+  disqusShortname = "satyamkapoor-2"
   enableSharingButtons = true
-  Author = "Satyam Kapoor"
   images = [""]
   description = "Satyam Kapoor's webspace. Blogging on Kubernetes, devOps, docker, automation, security, life in Europe etc."
   keywords = "Satyam Kapoor, SRE, Germany, Kubernetes, DevOps, Docker, automation, security, technology, blog"
+
+  [params.author]
+    name = "Satyam Kapoor"
+    email = "satyam@satyamkapoor.com"
 
 [[params.social]]
   name = "mastodon"
@@ -110,3 +114,7 @@ disqusShortname = "satyamkapoor-2"
     url        = "/euroventures"
 
     
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
