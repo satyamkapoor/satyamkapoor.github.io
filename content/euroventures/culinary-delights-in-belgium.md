@@ -1,19 +1,22 @@
 ---
-title: "Culinary Delights in Belgium"
+title: "Culinary Delights in Brussels 🇧🇪"
 date: 2024-05-09T22:00:01+02:00
+lastmod: 2025-06-19T20:35:00+02:00
 draft: false
-cover: "/images/euroventures/belgium/satyam-kapoor-car-free-day-brussels.jpg"
+cover: "images/euroventures/belgium/satyam-kapoor-car-free-day-brussels.jpg"
 toc: true
 description: Food options in Brussels
 tags:
 - food
 categories:
-- belgium
+- brussels
 - food
 summary: Best food places in Brussels curated by Satyam Kapoor
 ---
 
-## Exploring Culinary Delights in Belgium
+Start your culinary journey with the perfect soundtrack and immerse yourself in the flavors and rhythms of Belgium along with exploring the city's best bites.
+
+{{< spotify "4sOjKbpa7RLZVRNxcO26eb?utm_source=generator&theme=0"small >}}
 
 ### Breakfast in Brussels
 
