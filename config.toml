@@ -7,6 +7,9 @@ defaultContentLanguage = "en"
 
 pagination.pagerSize = 10
 
+[services]
+  [services.disqus]
+    shortname = "satyamkapoor-2"
 
 
 [params]
@@ -14,7 +17,6 @@ pagination.pagerSize = 10
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
-  disqusShortname = "satyamkapoor-2"
   enableSharingButtons = true
   images = [""]
   description = "Satyam Kapoor's webspace. Blogging on Kubernetes, devOps, docker, automation, security, life in Europe etc."
