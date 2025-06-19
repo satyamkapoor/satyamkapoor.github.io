@@ -14,7 +14,7 @@
         <div>
             {{ partial "social-icons.html" . }}
         </div>
-        <p style="margin-left: 20%;margin-right:20%;text-align:justify">
+        <p style="margin-left: 17%;margin-right:17%;text-align:justify">
 
             Hi there! I’m Satyam Kapoor—a tech enthusiast with a global perspective. Born and raised in India, I’ve
             spent two-thirds of my life there before making my way to Europe. Today, I call Frankfurt home, but I
@@ -35,48 +35,6 @@
 
         &nbsp;&nbsp;
 
-
-
-        <!-- <button onclick="getLocation()">Get My Location</button>
-<div id="location-info"></div>
-
-<script>
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    }
-
-    function showPosition(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`;
-        
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const commune = data.address.suburb || data.address.village || data.address.city_district || "Unknown";
-                const locationInfo = `
-                    <p>Latitude: ${latitude}</p>
-                    <p>Longitude: ${longitude}</p>
-                    <p>Commune: ${commune}</p>
-                    <pre>${JSON.stringify(data, null, 2)}</pre>
-                `;
-                document.getElementById("location-info").innerHTML = locationInfo;
-            })
-            .catch(error => {
-                console.error("Error fetching commune data:", error);
-                document.getElementById("location-info").innerHTML = "Error fetching commune data.";
-            });
-    }
-</script>
-            <p>
-            {{ range ( where .Site.RegularPages "Type" "=" "posts" | first 2 ) }}
-            <li  style="list-style-type: none"><span><a style="text-decoration: none" href="{{ .Permalink }}"><span style="font-style: italic;">{{ .Title }}</span> {{.Date.Format "Jan 2, 2006"}}</a></li>
-          {{end}}
-          </p> -->
     </div>
 </main>
 {{ end }}
