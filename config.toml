@@ -25,13 +25,12 @@ pagination.pagerSize = 10
     email = "satyam@satyamkapoor.com"
 
 [[params.social]]
-  name = "mastodon"
-  url = "https://mastodon.online/@satyam"
+  name = "bluesky"
+  url = "https://bsky.app/profile/satyamkapoor.com"
 
 [[params.social]]
-  name = "twitter"
-  url = "https://twitter.com/imsatyamkapoor"
-
+  name = "mastodon"
+  url = "https://mastodon.online/@satyam"
 
 [[params.social]]
   name = "linkedin"
