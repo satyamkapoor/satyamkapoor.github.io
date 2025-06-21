@@ -15,7 +15,7 @@ draft: false
 
 You know the best part about a public holiday? Empty roads, empty trains, and that rare feeling of a car-free city. There’s less stress searching for an open coffee shop—because, let’s face it, McDonald’s is often the only place open around here. 😅
 
-Lately, we’ve made it a tradition as a family to do the Sunday McDonald’s run, treating ourselves to their “new” Iced Caramel Latte. But here’s the thing: I never bothered collecting loyalty points. Honestly, I wasn’t sure how it worked when ordering from my car. The idea of scanning a QR code with my phone’s tiny camera seemed like too much effort.
+Lately, we’ve made it a tradition as a family to do the Sunday McDonald’s run, treating ourselves to their “new” Iced Caramel Latte. But here’s the thing: I never bothered collecting loyalty points. Honestly, I wasn’t sure how it worked when ordering from my car. The idea of showing a QR code while sitting in the car, to a person on the speaker looked like too much effort.
 Today, I finally decided to ask at the drive-thru if I could collect points. To my surprise, the staff just asked for my 4-character code from the McDonald’s app. I gave it, and—voilà!—points added.
 
 <br>
