@@ -34,7 +34,7 @@ With the Home app, devices (aka accessories) can be added by scanning HomeKit Se
 {{< image src="/images/apple_my_home.png"  position="center" style="border-radius: 8px;width:40%;display:inline-block;padding:0.1em;margin:1em;" >}}
 {{< image src="/images/apple_my_office.png"  position="center" style="border-radius: 8px;width:40%;display:inline-block;padding:0.1em;margin:1em;" >}}
 
-Scenes are automated routines which can be conifigured in Apple Home. Initially I was a bit disappointed as scenes appeared to be very limited as compared to 3rd party software solutions. I did configure the **Leave Home** scene which triggers all devices to switch off. 
+Scenes are automated routines which can be configured in Apple Home. Initially I was a bit disappointed as scenes appeared to be very limited as compared to 3rd party software solutions. I did configure the **Leave Home** scene which triggers all devices to switch off. 
 > Hey Siri! I'm leaving home
 
 would switch all devices off. However, it's a very basic scene like that of IFTTT. I'm sure IFTTT has better modules. What I expected the least is - **If it's sunset, turn the backyard lights on** or **If I'm closer to my home, switch on the heater & perhaps the speaker with some welcome Home song** but I could just  set the scene & request verbally to Siri for using it.
