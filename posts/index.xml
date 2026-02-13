@@ -4,15 +4,15 @@
 <p>Here I&rsquo;m going to walk you through my route sharing the experience of the tools I used &amp; ultimately why I&rsquo;m ready shelling 20 precious Euros from my hard earned money to use NextDNS.</p>
 <h4 id="using-pihole-and-enlightenment">Using PiHole and enlightenment</h4>
 <p>PiHole is lovely!</p>
-<p>Installed it in my homenetowork, delegated it responsibility for DHCP server and Boom! Network-wide adblocking is set.</p>
-<p>How about when not at home? PiHole can be used for DNS queries if I set up a VPN at my home. Unfortunately, upload transfer rate is overly bad at my place. Even though DNS queries are light but I feel the lag. Also, I want my friends and family to use this PiHole but I my experimentation rate using home raspberry pi is so high that I can&rsquo;t break everyone&rsquo;s DNS on performing a stupid change.</p>
+<p>Installed it in my homenetwork, delegated it responsibility for DHCP server and Boom! Network-wide adblocking is set.</p>
+<p>How about when not at home? PiHole can be used for DNS queries if I set up a VPN at my home. Unfortunately, upload transfer rate is overly bad at my place. Even though DNS queries are light but I feel the lag. Also, I want my friends and family to use this PiHole but my experimentation rate using home raspberry pi is so high that I can&rsquo;t break everyone&rsquo;s DNS on performing a stupid change.</p>
 <h4 id="nextdns-yes-next-not-sure-if-its-related-to-nextcloud-in-any-way">NextDNS, yes Next! Not sure if it&rsquo;s related to NextCloud in any way.</h4>
 <p>My understanding of NextDNS is, it&rsquo;s a SaaS version of PiHole. Another beauty is the app, just install it and you need to get your hands dirty with DNS settings. This is so handy for adoption by my family &amp; friends.</p>
 <h4 id="the-no-free-lunch-though">The No Free Lunch though</h4>
 <blockquote>
 <p>If it&rsquo;s free, consumer is the product.</p></blockquote>
 <p>It&rsquo;s free upto 300,000 queries a month. You can always choose to go with the Pro pack which is €19.90/year. It allows Unlimited queries (ofcourse) along with ability to share it with your close family &amp; friends.</p>
-<p>Make sure to explain your family &amp; friends that you can see there logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
+<p>Make sure to explain your family &amp; friends that you can see their logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
 <p>Here are some screenshots from nextDNS UI.</p>
 <h2 id="hahahugoshortcode8s0hbhb">
     <img src="/images/nextDNS/analytics_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
@@ -47,7 +47,7 @@
     <img src="/images/apple_my_office.png"  class="center"  style="border-radius: 8px;width:40%;display:inline-block;padding:0.1em;margin:1em;"  />
 
 </p>
-<p>Scenes are automated routines which can be conifigured in Apple Home. Initially I was a bit disappointed as scenes appeared to be very limited as compared to 3rd party software solutions. I did configure the <strong>Leave Home</strong> scene which triggers all devices to switch off.</p>
+<p>Scenes are automated routines which can be configured in Apple Home. Initially I was a bit disappointed as scenes appeared to be very limited as compared to 3rd party software solutions. I did configure the <strong>Leave Home</strong> scene which triggers all devices to switch off.</p>
 <blockquote>
 <p>Hey Siri! I&rsquo;m leaving home</p></blockquote>
 <p>would switch all devices off. However, it&rsquo;s a very basic scene like that of IFTTT. I&rsquo;m sure IFTTT has better modules. What I expected the least is - <strong>If it&rsquo;s sunset, turn the backyard lights on</strong> or <strong>If I&rsquo;m closer to my home, switch on the heater &amp; perhaps the speaker with some welcome Home song</strong> but I could just  set the scene &amp; request verbally to Siri for using it.</p>
@@ -104,7 +104,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">80</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/mnt/hdd/nexctcloud_data:/var/www/html</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">/mnt/hdd/nextcloud_data:/var/www/html</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">networks</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">nextcloud-network</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">environment</span>:
@@ -141,7 +141,7 @@
 </span></span><span style="display:flex;"><span>RewriteCond %{SERVER_NAME} =cloud.abc.com
 </span></span><span style="display:flex;"><span>RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/VirtualHost&gt;</span>
-</span></span></code></pre></div><p>The very first time when you&rsquo;ll try opening Nextcloud, it will prompt you to set your credentials and configurutation for the database server instance.
+</span></span></code></pre></div><p>The very first time when you&rsquo;ll try opening Nextcloud, it will prompt you to set your credentials and configuration for the database server instance.
 Once done, your personal cloud should be ready.</p>
 <p><img src="/nextcloud_login.jpg" alt="Example image"></p>
 <h4 id="apps-to-install-on-nextcloud-hub">Apps to install on Nextcloud hub</h4>
