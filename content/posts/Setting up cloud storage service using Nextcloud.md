@@ -49,7 +49,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - /mnt/hdd/nexctcloud_data:/var/www/html
+      - /mnt/hdd/nextcloud_data:/var/www/html
     networks:
       - nextcloud-network
     environment:
@@ -93,7 +93,7 @@ RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 ```
 
 
-The very first time when you'll try opening Nextcloud, it will prompt you to set your credentials and configurutation for the database server instance.
+The very first time when you'll try opening Nextcloud, it will prompt you to set your credentials and configuration for the database server instance.
 Once done, your personal cloud should be ready.
 
 
