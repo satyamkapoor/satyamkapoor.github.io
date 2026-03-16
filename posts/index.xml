@@ -2,9 +2,11 @@
 <p>For quite some time, I&rsquo;ve wanted to experiment with using AI to create genuinely useful, practical learning resources. This post represents one such experiment - combining AI generation with real-world utility.</p>
 <p>I&rsquo;ve generated two companion resources using <strong>Claude Sonnet 4.6</strong>:</p>
 <h3 id="-european-driving-handbook-crash-course">📚 European Driving Handbook (Crash Course)</h3>
-<p>A concise, practical guide designed specifically for Indians arriving in the EU. It explains European driver license codes, categories, and what they mean for your driving privileges across different European countries - all in an easy-to-digest format.</p>
+<p>A concise, practical guide designed specifically for Indians arriving in the EU. It explains European driver license codes, categories, and what they mean for your driving privileges across different European countries - all in an easy-to-digest format.
+<a href="/european_driving_handbook.html">Access the Handbook</a></p>
 <h3 id="-european-driving-quiz">📝 European Driving Quiz</h3>
-<p>An interactive quiz that complements the handbook, letting you test your understanding of European driver license rules and codes. Get immediate feedback to reinforce your learning.</p>
+<p>An interactive quiz that complements the handbook, letting you test your understanding of European driver license rules and codes. Get immediate feedback to reinforce your learning.
+<a href="/european_driving_quiz.html">Take the Quiz</a></p>
 <p>This very post you&rsquo;re reading was created with the help of <strong>Nemotron 3 Super Free</strong>, continuing my exploration of how different AI models can assist in content creation.</p>
 <p>These resources aim to solve a real problem: helping Indians navigate the complexities of European driver licensing systems when they first arrive. Rather than just theoretical experiments, I wanted to create something actually useful.</p>
 <p>Feel free to explore both resources and see how AI can be leveraged for practical educational content. I&rsquo;d love to hear your thoughts or suggestions!</p>
@@ -25,15 +27,15 @@
 <p>It&rsquo;s free upto 300,000 queries a month. You can always choose to go with the Pro pack which is €19.90/year. It allows Unlimited queries (ofcourse) along with ability to share it with your close family &amp; friends.</p>
 <p>Make sure to explain your family &amp; friends that you can see their logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
 <p>Here are some screenshots from nextDNS UI.</p>
-<h2 id="hahahugoshortcode9s0hbhb">
+<h2 id="hahahugoshortcode10s0hbhb">
     <img src="/images/nextDNS/analytics_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode9s1hbhb">
+<h2 id="hahahugoshortcode10s1hbhb">
     <img src="/images/nextDNS/analytics_graph_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode9s2hbhb">
+<h2 id="hahahugoshortcode10s2hbhb">
     <img src="/images/nextDNS/parental_control_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
