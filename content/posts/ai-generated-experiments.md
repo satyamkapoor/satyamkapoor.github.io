@@ -21,9 +21,11 @@ I've generated two companion resources using **Claude Sonnet 4.6**:
 
 ### 📚 European Driving Handbook (Crash Course)
 A concise, practical guide designed specifically for Indians arriving in the EU. It explains European driver license codes, categories, and what they mean for your driving privileges across different European countries - all in an easy-to-digest format.
+[Access the Handbook](/european_driving_handbook.html)
 
 ### 📝 European Driving Quiz
 An interactive quiz that complements the handbook, letting you test your understanding of European driver license rules and codes. Get immediate feedback to reinforce your learning.
+[Take the Quiz](/european_driving_quiz.html)
 
 This very post you're reading was created with the help of **Nemotron 3 Super Free**, continuing my exploration of how different AI models can assist in content creation.
 
