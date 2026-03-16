@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European Driving Quiz — For Indian Drivers</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --cream: #faf8f3;
+    --red: #d62828;
+    --amber: #f77f00;
+    --blue: #1a56a0;
+    --green: #2d6a4f;
+    --border: #e0dbd0;
+    --muted: #6b6560;
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --correct-bg: #eafaf1;
+    --correct-border: #2d6a4f;
+    --wrong-bg: #fff0f0;
+    --wrong-border: #d62828;
+    --option-hover: #f0f4ff;
+    --shadow: rgba(0,0,0,0.08);
+  }
+  [data-theme="dark"] {
+    --ink: #e8e4dc;
+    --cream: #12121e;
+    --red: #ff7070;
+    --amber: #ffaa44;
+    --blue: #6aa3e8;
+    --green: #5dbf8a;
+    --border: #2c2c3e;
+    --muted: #9a9098;
+    --card-bg: #1c1c2c;
+    --nav-bg: #16162a;
+    --correct-bg: #0c1e14;
+    --correct-border: #5dbf8a;
+    --wrong-bg: #260e0e;
+    --wrong-border: #ff7070;
+    --option-hover: #16203a;
+    --shadow: rgba(0,0,0,0.40);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    position: fixed; top: 14px; right: 16px; z-index: 200;
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 20px; padding: 6px 14px;
+    cursor: pointer; font-size: 0.78rem; font-weight: 600;
+    color: var(--ink); display: flex; align-items: center; gap: 6px;
+    transition: all 0.2s; box-shadow: 0 2px 8px var(--shadow);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: white;
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  [data-theme="dark"] .header { background: #0d0d1a; }
+  .header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(90deg,rgba(255,255,255,0.025) 0,rgba(255,255,255,0.025) 1px,transparent 1px,transparent 60px),
+                repeating-linear-gradient(0,rgba(255,255,255,0.025) 0,rgba(255,255,255,0.025) 1px,transparent 1px,transparent 60px);
+  }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; margin-bottom: 20px; transition: color 0.2s; }
+  .back-link:hover { color: #f77f00; }
+  .header h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem,5vw,3rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+  .header h1 span { color: #f77f00; }
+  .header p { opacity: 0.65; font-size: 0.95rem; margin-bottom: 6px; }
+  .header .byline { font-size: 0.72rem; opacity: 0.4; letter-spacing: 0.04em; }
+
+  /* PROGRESS */
+  .progress-bar-wrap {
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 24px;
+    position: sticky; top: 0; z-index: 50;
+    display: flex; align-items: center; gap: 16px;
+    transition: background 0.25s;
+  }
+  .progress-track {
+    flex: 1; height: 8px; background: var(--border);
+    border-radius: 4px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; background: linear-gradient(90deg, var(--blue), var(--amber));
+    border-radius: 4px;
+    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .progress-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+  .score-badge {
+    font-size: 0.8rem; font-weight: 700;
+    background: var(--blue-bg, #eef4ff); color: var(--blue);
+    padding: 3px 10px; border-radius: 12px;
+    white-space: nowrap;
+  }
+  [data-theme="dark"] .score-badge { background: #0e1626; }
+
+  /* QUIZ CONTAINER */
+  .quiz-wrap { max-width: 700px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* QUESTION CARD */
+  .q-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px var(--shadow);
+    transition: background 0.25s;
+  }
+  .q-num {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 8px;
+  }
+  .q-category {
+    display: inline-block; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--border); color: var(--muted);
+    padding: 2px 10px; border-radius: 8px; margin-bottom: 14px;
+  }
+  .q-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem; font-weight: 700;
+    line-height: 1.4; margin-bottom: 10px;
+  }
+  .q-sign { display: flex; justify-content: center; margin: 16px 0; }
+  .q-hint { font-size: 0.83rem; color: var(--muted); margin-bottom: 20px; font-style: italic; }
+
+  /* OPTIONS */
+  .options { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .option {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--cream); border: 2px solid var(--border);
+    border-radius: 10px; padding: 14px 16px;
+    cursor: pointer; transition: all 0.15s;
+    font-size: 0.92rem; font-weight: 500;
+    text-align: left;
+    color: var(--ink);
+  }
+  .option:hover:not(.disabled) { background: var(--option-hover); border-color: var(--blue); }
+  .option.disabled { cursor: default; }
+  .option.correct { background: var(--correct-bg); border-color: var(--correct-border); color: var(--ink); }
+  .option.wrong { background: var(--wrong-bg); border-color: var(--wrong-border); color: var(--ink); }
+  .option.revealed-correct { background: var(--correct-bg); border-color: var(--correct-border); }
+  .opt-letter {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--border); color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.82rem; flex-shrink: 0;
+    transition: all 0.15s;
+  }
+  .option.correct .opt-letter { background: var(--green); color: white; }
+  .option.wrong .opt-letter { background: var(--red); color: white; }
+  .option.revealed-correct .opt-letter { background: var(--green); color: white; }
+
+  /* EXPLANATION */
+  .explanation {
+    margin-top: 16px;
+    background: var(--correct-bg);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .explanation.wrong-expl {
+    background: var(--wrong-bg);
+    border-color: var(--red);
+  }
+  .explanation.show { display: block; }
+  .expl-label { font-weight: 700; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .explanation.wrong-expl .expl-label { color: var(--red); }
+  .explanation:not(.wrong-expl) .expl-label { color: var(--green); }
+
+  /* NEXT BUTTON */
+  .next-btn {
+    display: none; margin-top: 20px;
+    background: var(--ink); color: var(--cream);
+    border: none; border-radius: 10px;
+    padding: 14px 28px; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    transition: opacity 0.2s, transform 0.1s;
+  }
+  [data-theme="dark"] .next-btn { background: #2a2a40; color: #e8e4dc; }
+  .next-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .next-btn.show { display: block; animation: fadeIn 0.3s ease; }
+
+  /* RESULTS */
+  .results {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 4px 20px var(--shadow);
+    animation: fadeIn 0.5s ease;
+  }
+  .results.show { display: block; }
+  .results-emoji { font-size: 3.5rem; margin-bottom: 12px; }
+  .results-title { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 900; margin-bottom: 8px; }
+  .results-score { font-size: 3rem; font-weight: 700; color: var(--amber); font-family: 'Fraunces', serif; margin: 12px 0; }
+  .results-msg { color: var(--muted); margin-bottom: 24px; font-size: 0.95rem; max-width: 440px; margin-left: auto; margin-right: auto; }
+  .results-breakdown {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px; margin: 24px 0;
+  }
+  .breakdown-item {
+    background: var(--cream);
+    border-radius: 10px; padding: 14px;
+    border: 1px solid var(--border);
+  }
+  .breakdown-num { font-size: 1.8rem; font-weight: 700; font-family: 'Fraunces', serif; }
+  .breakdown-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+  .retry-btn {
+    background: var(--amber); color: white;
+    border: none; border-radius: 10px;
+    padding: 14px 32px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: opacity 0.2s;
+    margin-right: 10px;
+  }
+  .retry-btn:hover { opacity: 0.85; }
+  .back-btn {
+    background: transparent; color: var(--ink);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 32px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .back-btn:hover { border-color: var(--blue); }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
+  .shake { animation: shake 0.4s ease; }
+  @keyframes pop { 0%{transform:scale(1)} 50%{transform:scale(1.04)} 100%{transform:scale(1)} }
+  .pop { animation: pop 0.3s ease; }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+<div class="header">
+  <div class="header-inner">
+    <a href="european_driving_handbook.html" class="back-link">← Back to Handbook</a>
+    <h1>🧠 Driving <span>Quiz</span></h1>
+    <p>Test your knowledge of European traffic rules</p>
+    <p class="byline">✦ Generated by AI &nbsp;·&nbsp; Proofread by Humans ✦</p>
+  </div>
+</div>
+
+<div class="progress-bar-wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <span class="progress-label" id="progressLabel">Question 1 of 20</span>
+  <span class="score-badge" id="scoreBadge">Score: 0</span>
+</div>
+
+<div class="quiz-wrap">
+  <div id="quizArea"></div>
+  <div class="results" id="resultsPanel">
+    <div class="results-emoji" id="resultsEmoji">🏆</div>
+    <div class="results-title" id="resultsTitle">Quiz Complete!</div>
+    <div class="results-score" id="resultsScore">0/20</div>
+    <p class="results-msg" id="resultsMsg"></p>
+    <div class="results-breakdown">
+      <div class="breakdown-item">
+        <div class="breakdown-num" id="bdCorrect" style="color:var(--green)">0</div>
+        <div class="breakdown-label">Correct</div>
+      </div>
+      <div class="breakdown-item">
+        <div class="breakdown-num" id="bdWrong" style="color:var(--red)">0</div>
+        <div class="breakdown-label">Wrong</div>
+      </div>
+      <div class="breakdown-item">
+        <div class="breakdown-num" id="bdPct" style="color:var(--amber)">0%</div>
+        <div class="breakdown-label">Score</div>
+      </div>
+    </div>
+    <button class="retry-btn" onclick="restartQuiz()">🔁 Try Again</button>
+    <a href="european_driving_handbook.html" class="back-btn">📖 Back to Handbook</a>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    category: "Road Side",
+    text: "In Germany, France, Italy, and Spain — which side of the road do you drive on?",
+    sign: null,
+    options: ["Left side, same as India","Right side","Either side on motorways","Left on rural roads, right in cities"],
+    correct: 1,
+    explanation: "Almost all mainland European countries drive on the RIGHT side. Only UK, Ireland, Malta and Cyprus drive on the left like India."
+  },
+  {
+    category: "Traffic Signs",
+    text: "A circular sign with a RED border and a number in the centre means:",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="white" stroke="#d62828" stroke-width="8"/><text x="50" y="62" text-anchor="middle" font-size="34" font-weight="900" fill="#111" font-family="Arial">70</text></svg>`,
+    options: ["Minimum speed you must maintain","Maximum speed limit — do not exceed","Recommended speed in km/h","End of speed restriction"],
+    correct: 1,
+    explanation: "A red-bordered circle with a number is a MAXIMUM speed limit sign. You must not exceed this speed. Speed cameras enforce these strictly across Europe."
+  },
+  {
+    category: "Traffic Signs",
+    text: "What does a red octagon with the word STOP mean in Europe?",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><polygon points="50,4 84,20 94,55 74,90 26,90 6,55 16,20" fill="#d62828"/><text x="50" y="57" text-anchor="middle" font-size="20" font-weight="900" fill="white" font-family="Arial">STOP</text></svg>`,
+    options: ["Slow down if traffic is coming","Stop only if you see another vehicle","Come to a complete stop — even if nothing is coming","Stop and wait 5 seconds"],
+    correct: 2,
+    explanation: "A STOP sign requires a COMPLETE stop — wheels must stop rolling — regardless of whether the road appears clear. This is legally enforced and different from a Give Way sign."
+  },
+  {
+    category: "Traffic Signs",
+    text: "An upside-down white triangle with a red border means:",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><polygon points="50,92 8,18 92,18" fill="white" stroke="#d62828" stroke-width="6" stroke-linejoin="round"/></svg>`,
+    options: ["Stop completely","Give Way — yield to traffic on the main road","You are on a priority road","Roundabout ahead"],
+    correct: 1,
+    explanation: "The inverted triangle is the Give Way (Yield) sign. You must slow down and give priority to vehicles on the road you are joining — but you don't have to stop if the way is clear."
+  },
+  {
+    category: "Traffic Signs",
+    text: "What does a yellow diamond sign indicate?",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><rect x="26" y="26" width="48" height="48" rx="4" fill="#f9a825" stroke="#e65100" stroke-width="3" transform="rotate(45 50 50)"/></svg>`,
+    options: ["Warning: sharp bend ahead","You are on a priority road with right of way","Pedestrian crossing ahead","Toll road begins"],
+    correct: 1,
+    explanation: "A yellow diamond (solid) means you are on a PRIORITY ROAD. Vehicles joining from side roads must give way to you. A crossed-out yellow diamond means priority road ends."
+  },
+  {
+    category: "Traffic Signs",
+    text: "A blue circular sign with a white arrow pointing right means:",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#1a56a0"/><path d="M28 50 L62 50 M62 50 L46 34 M62 50 L46 66" stroke="white" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    options: ["No left turn","Turn right is recommended","You MUST turn right — it is mandatory","Right lane only for trucks"],
+    correct: 2,
+    explanation: "Blue circle signs are MANDATORY instructions. A blue circle with a directional arrow means you must go in that direction. There is no choice — you must comply."
+  },
+  {
+    category: "Lane Rules",
+    text: "You are driving on a 3-lane motorway in Germany. Which lane should you normally drive in?",
+    sign: null,
+    options: ["The middle lane for safety","The left lane to keep up with fast traffic","The rightmost lane — return there after overtaking","Any lane depending on speed"],
+    correct: 2,
+    explanation: "In Europe, the rightmost lane is always the default driving lane. The middle and left lanes are for overtaking only. Cruising in the middle or left lane is illegal in Germany and bad practice everywhere."
+  },
+  {
+    category: "Lane Rules",
+    text: "A car behind you on the German Autobahn is flashing its headlights. What should you do?",
+    sign: null,
+    options: ["Speed up to match their pace","Brake to warn them to back off","Move to the right lane immediately","Ignore it — they must wait"],
+    correct: 2,
+    explanation: "On the Autobahn, flashing headlights means 'please move to the right lane.' This is standard practice and legal. You should move right as soon as it is safe to do so."
+  },
+  {
+    category: "Roundabouts",
+    text: "At a European roundabout, who has priority?",
+    sign: null,
+    options: ["The vehicle entering the roundabout","The vehicle already inside the roundabout","The vehicle on the right","Larger vehicles always have priority"],
+    correct: 1,
+    explanation: "Traffic already INSIDE the roundabout has priority. Vehicles entering must give way. This is the opposite of how many Indian roundabouts work in practice, where entering vehicles often push through."
+  },
+  {
+    category: "Roundabouts",
+    text: "Which direction does traffic flow in a European roundabout (in countries that drive on the right)?",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#ddd" stroke-width="2"/><circle cx="50" cy="50" r="36" fill="#ccc" opacity="0.3"/><circle cx="50" cy="50" r="20" fill="white"/><path d="M50 14 A36 36 0 1 1 14 50" stroke="#1a56a0" stroke-width="5" fill="none" stroke-linecap="round"/><polygon points="50,7 43,20 57,20" fill="#1a56a0"/></svg>`,
+    options: ["Anti-clockwise (like in India)","Clockwise","Depends on the country","Direction of the first exit"],
+    correct: 1,
+    explanation: "In countries that drive on the right (most of Europe), roundabouts flow CLOCKWISE. This is opposite to India and the UK, where roundabouts are anti-clockwise."
+  },
+  {
+    category: "Traffic Lights",
+    text: "The traffic light turns AMBER (yellow) while you are approaching. What must you do?",
+    sign: `<svg width="60" height="130" viewBox="0 0 60 130"><rect x="5" y="5" width="50" height="120" rx="10" fill="#222"/><circle cx="30" cy="33" r="16" fill="#333"/><circle cx="30" cy="65" r="16" fill="#f77f00"/><circle cx="30" cy="97" r="16" fill="#333"/></svg>`,
+    options: ["Accelerate to pass before it turns red","Stop if it is safe to do so","Continue if you are less than 50m from the line","Flash your lights and proceed"],
+    correct: 1,
+    explanation: "Amber means STOP if it is safe to do so — NOT 'hurry up.' Running an amber light in Europe can result in a fine. In India, jumping amber is common; in Europe it is penalised. Only proceed if stopping would be dangerous."
+  },
+  {
+    category: "Pedestrians",
+    text: "You approach a zebra crossing. A pedestrian is standing on the pavement about to step onto it. What do you do?",
+    sign: null,
+    options: ["Slow down but only stop if they are on the road","Sound your horn to tell them to wait","Stop and let them cross","Flash your lights and continue if clear"],
+    correct: 2,
+    explanation: "In Europe, pedestrians have right of way at zebra crossings as soon as they step onto or APPROACH the crossing. You must stop. Failure to do so is a traffic offence with fines of €100–€300 in most countries."
+  },
+  {
+    category: "Speed",
+    text: "What is the standard speed limit in most European urban areas (towns and cities)?",
+    sign: `<svg width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="white" stroke="#d62828" stroke-width="8"/><text x="50" y="62" text-anchor="middle" font-size="32" font-weight="900" fill="#111" font-family="Arial">50</text></svg>`,
+    options: ["30 km/h","50 km/h","70 km/h","60 km/h"],
+    correct: 1,
+    explanation: "The standard urban speed limit across most European countries is 50 km/h. Some city centres have 30 km/h zones. Always watch for posted signs — these override the standard limit."
+  },
+  {
+    category: "Speed",
+    text: "In the UK, speed limits are given in:",
+    sign: null,
+    options: ["Kilometres per hour (km/h), same as rest of Europe","Miles per hour (mph)","Both — the signs show both","Metres per second"],
+    correct: 1,
+    explanation: "The UK uses MILES PER HOUR. 30mph ≈ 48 km/h (city), 60mph ≈ 97 km/h (rural), 70mph ≈ 113 km/h (motorway). This catches many continental and Indian visitors off guard."
+  },
+  {
+    category: "Legal",
+    text: "Which of the following is the universal emergency number across all EU countries?",
+    sign: null,
+    options: ["999","100","112","911"],
+    correct: 2,
+    explanation: "112 is the universal emergency number across all European countries. It works from any mobile phone, even without a SIM card or signal on some networks, and connects to Police, Ambulance and Fire services."
+  },
+  {
+    category: "Legal",
+    text: "You are driving in France. Which of these must you carry in your car?",
+    sign: null,
+    options: ["A spare tyre only","A warning triangle and hi-visibility vest at minimum","Just your driving licence","Nothing extra — your Indian licence is enough"],
+    correct: 1,
+    explanation: "In France (and most of Europe), you must carry a warning triangle and a hi-visibility vest — kept in the passenger cabin, not the boot. France also recommends a disposable breathalyser. Always confirm current requirements before your trip."
+  },
+  {
+    category: "Legal",
+    text: "What is the blood alcohol limit for drivers in most of mainland Europe?",
+    sign: null,
+    options: ["0.08% (same as the UK)","0.05%","0.10%","0.00% — zero tolerance everywhere"],
+    correct: 1,
+    explanation: "Most of mainland Europe has a 0.05% blood alcohol limit. Some countries (Czech Republic, Hungary, Romania) have zero tolerance (0.00%). The safest rule: don't drink at all if you plan to drive."
+  },
+  {
+    category: "Parking",
+    text: "You see a blue 'P' sign with a small clock icon showing '9:00–18:00' underneath. This means:",
+    sign: null,
+    options: ["Free parking available 9am–6pm only","Paid parking — you need a ticket","Time-limited parking — you must display a disc or ticket showing your arrival time","No parking during those hours"],
+    correct: 2,
+    explanation: "A blue parking zone with time restrictions means you may park but must display a parking disc (or pay-and-display ticket) showing your arrival time. The clock restriction shows the hours the rule applies."
+  },
+  {
+    category: "Country Rules",
+    text: "You want to drive on an Austrian or Swiss motorway. What do you need?",
+    sign: null,
+    options: ["A special foreign driver permit","A motorway vignette (sticker) displayed on your windscreen","Nothing extra — your licence is enough","A local driving licence"],
+    correct: 1,
+    explanation: "Austria and Switzerland require a motorway VIGNETTE — a sticker you buy at the border or online — to use their motorways. Driving without one results in a heavy fine. Germany does NOT require a vignette for cars."
+  },
+  {
+    category: "Country Rules",
+    text: "You are driving in Italy and approaching a city centre. You see a sign with the letters 'ZTL' in orange. What does this mean?",
+    sign: null,
+    options: ["Zona Traffico Libero — free traffic zone, go ahead","Zona Traffico Limitato — restricted zone, cameras will fine you if you enter without a permit","A tunnel ahead","A toll booth ahead"],
+    correct: 1,
+    explanation: "ZTL stands for Zona Traffico Limitato — a camera-controlled restricted zone in Italian city centres. Entering without a permit results in fines mailed weeks later, sometimes even to India through your rental company. Always check with your hotel or GPS before entering any Italian city centre."
+  }
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function renderQuestion() {
+  const q = QUESTIONS[current];
+  const letters = ['A','B','C','D'];
+  const pct = (current / QUESTIONS.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Question ${current+1} of ${QUESTIONS.length}`;
+  document.getElementById('scoreBadge').textContent = `Score: ${score}`;
+
+  const signHTML = q.sign ? `<div class="q-sign">${q.sign}</div>` : '';
+  const hintHTML = q.hint ? `<p class="q-hint">${q.hint}</p>` : '';
+
+  const html = `
+    <div class="q-card" id="qCard">
+      <div class="q-num">Question ${current+1} of ${QUESTIONS.length}</div>
+      <span class="q-category">${q.category}</span>
+      <div class="q-text">${q.text}</div>
+      ${signHTML}
+      ${hintHTML}
+      <div class="options" id="optionsWrap">
+        ${q.options.map((opt, i) => `
+          <button class="option" onclick="selectOption(${i})" id="opt${i}">
+            <span class="opt-letter">${letters[i]}</span>
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+      <div class="explanation" id="explanation"></div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+        ${current + 1 < QUESTIONS.length ? 'Next Question →' : 'See Results 🏁'}
+      </button>
+    </div>
+  `;
+  document.getElementById('quizArea').innerHTML = html;
+  answered = false;
+}
+
+function selectOption(chosen) {
+  if (answered) return;
+  answered = true;
+  const q = QUESTIONS[current];
+  const isCorrect = chosen === q.correct;
+  const letters = ['A','B','C','D'];
+
+  // Disable all options
+  q.options.forEach((_, i) => {
+    const btn = document.getElementById('opt' + i);
+    btn.classList.add('disabled');
+    if (i === q.correct) btn.classList.add(isCorrect && i === chosen ? 'correct' : 'revealed-correct');
+    if (i === chosen && !isCorrect) btn.classList.add('wrong');
+  });
+
+  if (isCorrect) {
+    score++;
+    document.getElementById('opt' + chosen).classList.add('pop');
+  } else {
+    document.getElementById('opt' + chosen).classList.add('shake');
+  }
+
+  // Show explanation
+  const expl = document.getElementById('explanation');
+  expl.classList.add('show');
+  if (!isCorrect) expl.classList.add('wrong-expl');
+  expl.innerHTML = `
+    <div class="expl-label">${isCorrect ? '✓ Correct!' : '✗ Not quite'}</div>
+    <p>${q.explanation}</p>
+  `;
+
+  // Show next button
+  document.getElementById('nextBtn').classList.add('show');
+  document.getElementById('scoreBadge').textContent = `Score: ${score}`;
+}
+
+function nextQuestion() {
+  current++;
+  if (current >= QUESTIONS.length) {
+    showResults();
+  } else {
+    renderQuestion();
+    window.scrollTo({ top: document.querySelector('.progress-bar-wrap').offsetTop - 10, behavior: 'smooth' });
+  }
+}
+
+function showResults() {
+  document.getElementById('quizArea').innerHTML = '';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressLabel').textContent = `Complete!`;
+  document.getElementById('scoreBadge').textContent = `Score: ${score}`;
+
+  const total = QUESTIONS.length;
+  const pct = Math.round((score / total) * 100);
+  const panel = document.getElementById('resultsPanel');
+  panel.classList.add('show');
+
+  let emoji, title, msg;
+  if (pct >= 90) { emoji = '🏆'; title = 'Outstanding!'; msg = 'You are well-prepared for European roads. A quick re-read of any missed sections and you are good to go!'; }
+  else if (pct >= 70) { emoji = '🎉'; title = 'Well Done!'; msg = 'Good understanding of the basics. Review the sections you missed, especially traffic signs and roundabout rules.'; }
+  else if (pct >= 50) { emoji = '📚'; title = 'Keep Studying'; msg = 'You have a foundation but there are gaps. Re-read the handbook carefully, especially signs, speed limits and lane rules.'; }
+  else { emoji = '🚗'; title = 'Back to the Handbook!'; msg = 'European roads have strict rules. We recommend reading the full handbook before driving. Safety first!'; }
+
+  document.getElementById('resultsEmoji').textContent = emoji;
+  document.getElementById('resultsTitle').textContent = title;
+  document.getElementById('resultsScore').textContent = `${score}/${total}`;
+  document.getElementById('resultsMsg').textContent = msg;
+  document.getElementById('bdCorrect').textContent = score;
+  document.getElementById('bdWrong').textContent = total - score;
+  document.getElementById('bdPct').textContent = pct + '%';
+
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function restartQuiz() {
+  current = 0; score = 0;
+  document.getElementById('resultsPanel').classList.remove('show');
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Theme
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const saved = localStorage.getItem('theme');
+const theme = saved || (prefersDark ? 'dark' : 'light');
+document.documentElement.setAttribute('data-theme', theme);
+updateBtn(theme);
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  updateBtn(next);
+}
+function updateBtn(t) {
+  const btn = document.getElementById('themeBtn');
+  if (btn) btn.textContent = t === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+
+// Start
+renderQuestion();
+</script>
+</body>
+</html>

@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European Driving Crash Course — For Indian Drivers</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --cream: #faf8f3;
+    --red: #d62828;
+    --amber: #f77f00;
+    --blue: #1a56a0;
+    --green: #2d6a4f;
+    --yellow-bg: #fff8e1;
+    --red-bg: #fff0f0;
+    --blue-bg: #eef4ff;
+    --green-bg: #eafaf1;
+    --border: #e0dbd0;
+    --muted: #6b6560;
+    --card-bg: #ffffff;
+    --nav-bg: #ffffff;
+    --table-even: rgba(0,0,0,0.02);
+    --country-header-bg: #f7f5f0;
+    --compare-india-bg: #fff8f0;
+    --compare-india-border: #f9c784;
+    --compare-europe-bg: #f0f7ff;
+    --compare-europe-border: #a8c8f9;
+    --shadow: rgba(0,0,0,0.10);
+  }
+  [data-theme="dark"] {
+    --ink: #e8e4dc;
+    --cream: #12121e;
+    --red: #ff7070;
+    --amber: #ffaa44;
+    --blue: #6aa3e8;
+    --green: #5dbf8a;
+    --yellow-bg: #26200e;
+    --red-bg: #260e0e;
+    --blue-bg: #0e1626;
+    --green-bg: #0c1e14;
+    --border: #2c2c3e;
+    --muted: #9a9098;
+    --card-bg: #1c1c2c;
+    --nav-bg: #16162a;
+    --table-even: rgba(255,255,255,0.04);
+    --country-header-bg: #1a1a28;
+    --compare-india-bg: #1e1508;
+    --compare-india-border: #6b4a10;
+    --compare-europe-bg: #0c1420;
+    --compare-europe-border: #1e3d6b;
+    --shadow: rgba(0,0,0,0.40);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    transition: background 0.25s, color 0.25s;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .hero { background: #0d0d1a; }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px),
+                repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px);
+  }
+  .hero-flag { font-size: 2.5rem; margin-bottom: 16px; }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: #f77f00; }
+  .hero-sub {
+    font-size: 1.05rem;
+    opacity: 0.75;
+    max-width: 540px;
+    margin: 0 auto 16px;
+  }
+  .hero-byline {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin: 0 auto 24px;
+    letter-spacing: 0.04em;
+  }
+  .hero-byline a { color: inherit; text-decoration: underline; opacity: 0.8; }
+  .hero-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .hero-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── THEME TOGGLE ── */
+  .theme-toggle {
+    position: fixed; top: 14px; right: 16px; z-index: 200;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex; align-items: center; gap: 6px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px var(--shadow);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .theme-toggle:hover { box-shadow: 0 4px 16px var(--shadow); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--nav-bg);
+    border-bottom: 2px solid var(--border);
+    padding: 0 24px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; gap: 0; overflow-x: auto;
+    transition: background 0.25s;
+  }
+  nav a {
+    text-decoration: none; color: var(--ink);
+    font-size: 0.8rem; font-weight: 600;
+    padding: 14px 16px;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  nav a:hover { border-bottom-color: var(--amber); color: var(--blue); }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── CHAPTER HEADER ── */
+  .chapter {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chapter-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 6px;
+  }
+  .chapter h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .chapter > .container > p {
+    color: var(--muted);
+    max-width: 680px;
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 36px 0 16px;
+    color: var(--ink);
+    border-left: 4px solid var(--amber);
+    padding-left: 12px;
+  }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .callout .icon { font-size: 1.3rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .callout-content strong { display: block; margin-bottom: 4px; font-size: 0.9rem; }
+  .callout-content p { font-size: 0.88rem; line-height: 1.6; }
+  .callout.danger { background: var(--red-bg); border-left: 4px solid var(--red); }
+  .callout.danger strong { color: var(--red); }
+  .callout.warning { background: var(--yellow-bg); border-left: 4px solid var(--amber); }
+  .callout.warning strong { color: #a85f00; }
+  .callout.tip { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+  .callout.tip strong { color: var(--blue); }
+  .callout.success { background: var(--green-bg); border-left: 4px solid var(--green); }
+  .callout.success strong { color: var(--green); }
+
+  /* ── SIGN GRID ── */
+  .sign-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .sign-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 14px 16px;
+    text-align: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+  }
+  .sign-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px var(--shadow); }
+  .sign-card svg { display: block; margin: 0 auto 12px; }
+  .sign-name { font-weight: 700; font-size: 0.82rem; margin-bottom: 6px; color: var(--ink); }
+  .sign-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+  /* ── TABLE ── */
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
+  .data-table th {
+    background: var(--ink); color: var(--cream);
+    padding: 10px 14px; text-align: left;
+    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  [data-theme="dark"] .data-table th { background: #2a2a40; color: #e8e4dc; }
+  .data-table th:first-child { border-radius: 8px 0 0 0; }
+  .data-table th:last-child { border-radius: 0 8px 0 0; }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--ink); }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) td { background: var(--table-even); }
+  .data-table .tag {
+    display: inline-block;
+    padding: 2px 8px; border-radius: 4px;
+    font-size: 0.75rem; font-weight: 700;
+  }
+  .tag-red { background: #fde8e8; color: #c00; }
+  .tag-amber { background: #fff3d4; color: #a85f00; }
+  .tag-green { background: #e8f5ed; color: #1a5c35; }
+  .tag-blue { background: #e0ecff; color: #0e3d8a; }
+  [data-theme="dark"] .tag-red { background: #3a1010; color: #ff8080; }
+  [data-theme="dark"] .tag-amber { background: #2a1e06; color: #ffaa44; }
+  [data-theme="dark"] .tag-green { background: #0a1e10; color: #5dbf8a; }
+  [data-theme="dark"] .tag-blue { background: #081428; color: #6aa3e8; }
+
+  /* ── COMPARISON BOX ── */
+  .compare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin: 24px 0;
+  }
+  .compare-box {
+    border-radius: 10px;
+    padding: 18px;
+    border: 1px solid var(--border);
+  }
+  .compare-box.india { background: var(--compare-india-bg); border-color: var(--compare-india-border); }
+  .compare-box.europe { background: var(--compare-europe-bg); border-color: var(--compare-europe-border); }
+  .compare-title {
+    font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .compare-box.india .compare-title { color: #a85f00; }
+  .compare-box.europe .compare-title { color: var(--blue); }
+  .compare-box ul { padding-left: 18px; }
+  .compare-box li { font-size: 0.87rem; margin-bottom: 6px; color: var(--muted); }
+
+  /* ── SPEED CARDS ── */
+  .speed-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+  .speed-card {
+    border-radius: 10px; padding: 16px;
+    text-align: center; border: 1px solid var(--border);
+    background: white;
+  }
+  .speed-icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .speed-zone { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 4px; }
+  .speed-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; }
+  .speed-sub { font-size: 0.72rem; color: var(--muted); }
+  .speed-num.urban { color: var(--green); }
+  .speed-num.rural { color: var(--amber); }
+  .speed-num.highway { color: var(--blue); }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; margin: 16px 0; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 8px 0; border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist .check { color: var(--green); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── COUNTRY CARDS ── */
+  .country-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px; margin: 24px 0;
+  }
+  .country-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+  .country-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--country-header-bg);
+  }
+  .country-flag { font-size: 1.6rem; }
+  .country-name { font-weight: 700; font-size: 1rem; }
+  .country-body { padding: 14px 16px; }
+  .country-body li { font-size: 0.83rem; color: var(--muted); margin-bottom: 8px; padding-left: 14px; position: relative; line-height: 1.5; }
+  .country-body li::before { content: '→'; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+
+  /* ── ROUNDABOUT STEPS ── */
+  .steps { counter-reset: step; list-style: none; margin: 20px 0; }
+  .steps li {
+    counter-increment: step;
+    display: flex; gap: 16px; align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .steps li::before {
+    content: counter(step);
+    background: var(--ink); color: white;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .steps li p { font-size: 0.9rem; padding-top: 5px; }
+  .steps li strong { color: var(--red); }
+
+  .tl-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+  }
+  .tl-label { font-weight: 700; font-size: 0.85rem; margin-top: 8px; }
+  .tl-desc { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center; padding: 40px 24px;
+    margin-top: 60px;
+    transition: background 0.25s;
+  }
+  [data-theme="dark"] footer { background: #0d0d1a; }
+  footer p { font-size: 0.85rem; opacity: 0.6; margin-top: 8px; }
+
+  @media(max-width: 600px) {
+    .compare { grid-template-columns: 1fr; }
+    .speed-cards { grid-template-columns: repeat(3,1fr); }
+    .sign-grid { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-flag">🇮🇳 ✈️ 🇪🇺</div>
+  <h1>European Driving<br><span>Crash Course</span></h1>
+  <p class="hero-sub">A visual handbook for Indian drivers heading to Europe — signs, rules, habits and tips</p>
+  <p class="hero-byline">✦ Generated by AI &nbsp;·&nbsp; Proofread by Humans ✦</p>
+  <div class="hero-tags">
+    <span class="hero-tag">Traffic Signs</span>
+    <span class="hero-tag">Speed Limits</span>
+    <span class="hero-tag">Lane Rules</span>
+    <span class="hero-tag">Roundabouts</span>
+    <span class="hero-tag">Parking</span>
+    <span class="hero-tag">Country Rules</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#rules">Road Rules</a>
+  <a href="#signs">Traffic Signs</a>
+  <a href="#speed">Speed</a>
+  <a href="#lanes">Lane Discipline</a>
+  <a href="#roundabouts">Roundabouts</a>
+  <a href="#pedestrians">Pedestrians</a>
+  <a href="#parking">Parking</a>
+  <a href="#legal">Legal</a>
+  <a href="#countries">Countries</a>
+  <a href="#checklist">Checklist</a>
+</nav>
+
+<!-- ════════════════════════════════ CHAPTER 1 ════ -->
+<section class="chapter" id="rules">
+<div class="container">
+  <div class="chapter-label">Chapter 1</div>
+  <h2>The Big Difference: Drive on the Right</h2>
+  <p>In India we drive on the left. In almost all of Europe (except the UK, Ireland, Malta and Cyprus), traffic flows on the <strong>right side</strong>. This single change affects every habit you have built over years of driving.</p>
+
+  <div class="compare">
+    <div class="compare-box india">
+      <div class="compare-title">🇮🇳 India</div>
+      <ul>
+        <li>Drive on the <strong>left</strong> side</li>
+        <li>Steering wheel on the right</li>
+        <li>Overtake on the right</li>
+        <li>Roundabout: anticlockwise</li>
+      </ul>
+    </div>
+    <div class="compare-box europe">
+      <div class="compare-title">🇪🇺 Most of Europe</div>
+      <ul>
+        <li>Drive on the <strong>right</strong> side</li>
+        <li>Steering wheel on the left</li>
+        <li>Overtake on the left</li>
+        <li>Roundabout: clockwise</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout danger">
+    <div class="icon">🔴</div>
+    <div class="callout-content">
+      <strong>Highest-Risk Moment</strong>
+      <p>After turning at a junction or exiting a petrol station, your brain defaults to the Indian habit. Mentally say "right side" every time you turn or join a new road.</p>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="icon">💡</div>
+    <div class="callout-content">
+      <strong>Countries that drive on the LEFT (like India)</strong>
+      <p>🇬🇧 UK &nbsp;·&nbsp; 🇮🇪 Ireland &nbsp;·&nbsp; 🇲🇹 Malta &nbsp;·&nbsp; 🇨🇾 Cyprus — steering wheel on the right, same as India.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 2 ════ -->
+<section class="chapter" id="signs">
+<div class="container">
+  <div class="chapter-label">Chapter 2</div>
+  <h2>Traffic Signs</h2>
+  <p>European signs follow a universal system based on <strong>shape and colour</strong>. Learn the shape first — it tells you the category immediately, before you even read the symbol.</p>
+
+  <div class="section-title">Sign Shapes & What They Mean</div>
+  <div class="sign-grid">
+
+    <!-- Red Circle = Prohibition -->
+    <div class="sign-card">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="36" fill="white" stroke="#d62828" stroke-width="6"/>
+        <rect x="22" y="37" width="36" height="7" rx="2" fill="#d62828"/>
+      </svg>
+      <div class="sign-name">Red Circle</div>
+      <div class="sign-desc">Prohibition — you must NOT do this</div>
+    </div>
+
+    <!-- Red Triangle = Warning -->
+    <div class="sign-card">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <polygon points="40,6 76,70 4,70" fill="white" stroke="#d62828" stroke-width="5" stroke-linejoin="round"/>
+        <text x="40" y="62" text-anchor="middle" font-size="26" font-weight="900" fill="#d62828">!</text>
+      </svg>
+      <div class="sign-name">Red Triangle</div>
+      <div class="sign-desc">Warning — hazard ahead</div>
+    </div>
+
+    <!-- Blue Circle = Mandatory -->
+    <div class="sign-card">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="36" fill="#1a56a0"/>
+        <path d="M26 44 L40 28 L54 44" stroke="white" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="40" y1="28" x2="40" y2="56" stroke="white" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <div class="sign-name">Blue Circle</div>
+      <div class="sign-desc">Mandatory — you must do this</div>
+    </div>
+
+    <!-- Blue Rectangle = Info -->
+    <div class="sign-card">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <rect x="8" y="20" width="64" height="40" rx="6" fill="#1a56a0"/>
+        <text x="40" y="47" text-anchor="middle" font-size="26" font-weight="900" fill="white">i</text>
+      </svg>
+      <div class="sign-name">Blue Rectangle</div>
+      <div class="sign-desc">Information & directions</div>
+    </div>
+
+    <!-- Yellow Diamond = Priority -->
+    <div class="sign-card">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <rect x="20" y="20" width="40" height="40" rx="3" fill="#f9a825" stroke="#e65100" stroke-width="3" transform="rotate(45 40 40)"/>
+      </svg>
+      <div class="sign-name">Yellow Diamond</div>
+      <div class="sign-desc">Priority road — you have right of way</div>
+    </div>
+
+    <!-- White Rectangle = Local rule -->
+    <div class="sign-card">
+      <svg width="80" height="80" viewBox="0 0 80 80">
+        <rect x="10" y="20" width="60" height="40" rx="4" fill="white" stroke="#333" stroke-width="4"/>
+        <text x="40" y="47" text-anchor="middle" font-size="20" font-weight="900" fill="#333">30</text>
+      </svg>
+      <div class="sign-name">White Rectangle</div>
+      <div class="sign-desc">Regulation or zone rule</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">Signs You Will See Every Day</div>
+  <div class="sign-grid">
+
+    <!-- No Entry -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="40" fill="#d62828"/>
+        <rect x="18" y="39" width="54" height="12" rx="4" fill="white"/>
+      </svg>
+      <div class="sign-name">No Entry</div>
+      <div class="sign-desc">One-way road facing you. Do NOT enter.</div>
+    </div>
+
+    <!-- Speed Limit -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="40" fill="white" stroke="#d62828" stroke-width="7"/>
+        <text x="45" y="56" text-anchor="middle" font-size="28" font-weight="900" fill="#111" font-family="Arial">50</text>
+      </svg>
+      <div class="sign-name">Speed Limit</div>
+      <div class="sign-desc">Max speed in km/h. Cameras everywhere.</div>
+    </div>
+
+    <!-- Stop -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <polygon points="45,5 79,22 85,58 62,84 28,84 5,58 11,22" fill="#d62828"/>
+        <text x="45" y="54" text-anchor="middle" font-size="18" font-weight="900" fill="white" font-family="Arial">STOP</text>
+      </svg>
+      <div class="sign-name">Stop</div>
+      <div class="sign-desc">Full stop REQUIRED even if road is clear.</div>
+    </div>
+
+    <!-- Give Way -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <polygon points="45,82 6,15 84,15" fill="white" stroke="#d62828" stroke-width="6" stroke-linejoin="round"/>
+      </svg>
+      <div class="sign-name">Give Way</div>
+      <div class="sign-desc">Slow down, yield to joining traffic.</div>
+    </div>
+
+    <!-- Roundabout -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="40" fill="#1a56a0"/>
+        <path d="M45 25 A20 20 0 1 1 25 45" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <polygon points="45,18 38,30 52,30" fill="white"/>
+        <line x1="25" y1="45" x2="16" y2="45" stroke="white" stroke-width="4"/>
+        <polygon points="10,45 20,39 20,51" fill="white"/>
+      </svg>
+      <div class="sign-name">Roundabout</div>
+      <div class="sign-desc">Give way to traffic inside. Go clockwise.</div>
+    </div>
+
+    <!-- No Overtaking -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="40" fill="white" stroke="#d62828" stroke-width="7"/>
+        <ellipse cx="34" cy="45" rx="12" ry="16" fill="#555"/>
+        <ellipse cx="56" cy="45" rx="12" ry="16" fill="#d62828"/>
+        <line x1="12" y1="12" x2="78" y2="78" stroke="#d62828" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <div class="sign-name">No Overtaking</div>
+      <div class="sign-desc">No passing until restriction ends.</div>
+    </div>
+
+    <!-- Pedestrian Crossing -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <polygon points="45,6 76,70 14,70" fill="white" stroke="#d62828" stroke-width="5" stroke-linejoin="round"/>
+        <!-- walking person -->
+        <circle cx="45" cy="28" r="5" fill="#333"/>
+        <line x1="45" y1="33" x2="45" y2="50" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+        <line x1="45" y1="40" x2="37" y2="46" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="40" x2="53" y2="46" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="50" x2="38" y2="60" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+        <line x1="45" y1="50" x2="52" y2="60" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="sign-name">Pedestrians</div>
+      <div class="sign-desc">Pedestrian crossing or zone ahead.</div>
+    </div>
+
+    <!-- End of speed limit -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="40" fill="white" stroke="#999" stroke-width="4" stroke-dasharray="8 4"/>
+        <text x="45" y="56" text-anchor="middle" font-size="28" font-weight="900" fill="#aaa" font-family="Arial">50</text>
+      </svg>
+      <div class="sign-name">Speed Limit Ends</div>
+      <div class="sign-desc">Previous restriction no longer applies.</div>
+    </div>
+
+    <!-- Priority Road -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <rect x="25" y="25" width="40" height="40" rx="3" fill="#f9a825" stroke="#e65100" stroke-width="3" transform="rotate(45 45 45)"/>
+      </svg>
+      <div class="sign-name">Priority Road</div>
+      <div class="sign-desc">You have right of way over side roads.</div>
+    </div>
+
+    <!-- No Parking -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <circle cx="45" cy="45" r="40" fill="#1a56a0" stroke="#d62828" stroke-width="6"/>
+        <text x="45" y="56" text-anchor="middle" font-size="32" font-weight="900" fill="white" font-family="Arial">P</text>
+        <line x1="15" y1="15" x2="75" y2="75" stroke="#d62828" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      <div class="sign-name">No Parking</div>
+      <div class="sign-desc">Parking prohibited. Fines and towing.</div>
+    </div>
+
+    <!-- Motorway -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <rect x="5" y="16" width="80" height="58" rx="8" fill="#1a56a0"/>
+        <line x1="45" y1="22" x2="45" y2="68" stroke="white" stroke-width="3" stroke-dasharray="8 5"/>
+        <path d="M14 68 L14 38 C14 38 25 22 35 22 L45 22" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M76 68 L76 38 C76 38 65 22 55 22 L45 22" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="sign-name">Motorway</div>
+      <div class="sign-desc">Highway rules apply. No cyclists/mopeds.</div>
+    </div>
+
+    <!-- Traffic Lights ahead -->
+    <div class="sign-card">
+      <svg width="90" height="90" viewBox="0 0 90 90">
+        <polygon points="45,6 76,70 14,70" fill="white" stroke="#d62828" stroke-width="5" stroke-linejoin="round"/>
+        <rect x="36" y="22" width="18" height="34" rx="4" fill="#333"/>
+        <circle cx="45" cy="30" r="4" fill="#d62828"/>
+        <circle cx="45" cy="39" r="4" fill="#f9a825"/>
+        <circle cx="45" cy="48" r="4" fill="#2d6a4f"/>
+      </svg>
+      <div class="sign-name">Traffic Lights</div>
+      <div class="sign-desc">Traffic lights ahead. Be ready to stop.</div>
+    </div>
+
+  </div>
+
+  <div class="callout warning">
+    <div class="icon">⚠️</div>
+    <div class="callout-content">
+      <strong>India vs Europe</strong>
+      <p>In Indian cities, signs are often absent or ignored. In Europe, automated cameras and on-the-spot fines make ignoring signs very expensive — fines are sometimes mailed to your home address weeks later.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 3 ════ -->
+<section class="chapter" id="speed">
+<div class="container">
+  <div class="chapter-label">Chapter 3</div>
+  <h2>Speed Limits</h2>
+  <p>Speed limits are enforced by fixed cameras, mobile units, and average-speed systems. Fines are sent to foreign drivers via rental car companies — you cannot avoid them.</p>
+
+  <div class="speed-cards">
+    <div class="speed-card">
+      <div class="speed-icon">🏙️</div>
+      <div class="speed-zone">Urban / City</div>
+      <div class="speed-num urban">50</div>
+      <div class="speed-sub">km/h standard</div>
+    </div>
+    <div class="speed-card">
+      <div class="speed-icon">🌾</div>
+      <div class="speed-zone">Rural Road</div>
+      <div class="speed-num rural">90</div>
+      <div class="speed-sub">km/h standard</div>
+    </div>
+    <div class="speed-card">
+      <div class="speed-icon">🛣️</div>
+      <div class="speed-zone">Motorway</div>
+      <div class="speed-num highway">130</div>
+      <div class="speed-sub">km/h standard</div>
+    </div>
+  </div>
+
+  <div class="section-title">Country Speed Limits</div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Country</th><th>Urban</th><th>Rural</th><th>Motorway</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>🇩🇪 Germany</td><td><span class="tag tag-green">50</span></td><td><span class="tag tag-amber">100</span></td><td><span class="tag tag-blue">None*</span></td><td>Advisory 130 on Autobahn</td></tr>
+      <tr><td>🇫🇷 France</td><td><span class="tag tag-green">50</span></td><td><span class="tag tag-amber">80</span></td><td><span class="tag tag-blue">130</span></td><td>80 km/h rural, drops in rain</td></tr>
+      <tr><td>🇮🇹 Italy</td><td><span class="tag tag-green">50</span></td><td><span class="tag tag-amber">90</span></td><td><span class="tag tag-blue">130</span></td><td>Tutor average-speed cameras common</td></tr>
+      <tr><td>🇪🇸 Spain</td><td><span class="tag tag-green">50</span></td><td><span class="tag tag-amber">90</span></td><td><span class="tag tag-blue">120</span></td><td>30 km/h in many city centres</td></tr>
+      <tr><td>🇳🇱 Netherlands</td><td><span class="tag tag-green">50</span></td><td><span class="tag tag-amber">80</span></td><td><span class="tag tag-blue">100</span></td><td>Some motorways 130 at night</td></tr>
+      <tr><td>🇬🇧 UK</td><td><span class="tag tag-green">30mph</span></td><td><span class="tag tag-amber">60mph</span></td><td><span class="tag tag-blue">70mph</span></td><td>Miles per hour, not km/h!</td></tr>
+      <tr><td>🇦🇹 Austria</td><td><span class="tag tag-green">50</span></td><td><span class="tag tag-amber">100</span></td><td><span class="tag tag-blue">130</span></td><td>130 reduces to 110 in heat/pollution</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout danger">
+    <div class="icon">📷</div>
+    <div class="callout-content">
+      <strong>Average Speed Cameras</strong>
+      <p>Italy, Netherlands and the UK use systems that measure your average speed between two points kilometres apart. Slowing at the camera does nothing — maintain a legal speed throughout.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 4 ════ -->
+<section class="chapter" id="lanes">
+<div class="container">
+  <div class="chapter-label">Chapter 4</div>
+  <h2>Lane Discipline & Overtaking</h2>
+  <p>This is where Indian driving habits cause the most friction in Europe. Europeans follow lane rules strictly and aggressively.</p>
+
+  <div class="section-title">Motorway Lane Rules</div>
+  <table class="data-table">
+    <thead><tr><th>Lane</th><th>Purpose</th><th>Key Rule</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="tag tag-green">Right Lane</span></td>
+        <td>Normal driving — always return here after overtaking</td>
+        <td>Default lane for all driving</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-amber">Middle Lane</span></td>
+        <td>Overtaking the right lane only</td>
+        <td>Do not cruise here</td>
+      </tr>
+      <tr>
+        <td><span class="tag tag-red">Left Lane</span></td>
+        <td>Fast overtaking only</td>
+        <td>Vacate immediately. Camping here is illegal in Germany.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="checklist">
+    <li><span class="check">✓</span> Always use your indicator before every lane change — not optional.</li>
+    <li><span class="check">✓</span> Never undertake (overtake on the right / inner lane) — illegal everywhere.</li>
+    <li><span class="check">✓</span> Check mirrors AND your blind spot before moving lanes.</li>
+    <li><span class="check">✓</span> Return to the right lane after passing a vehicle.</li>
+  </ul>
+
+  <div class="callout danger">
+    <div class="icon">🚗</div>
+    <div class="callout-content">
+      <strong>Flashing Headlights in Germany</strong>
+      <p>On the Autobahn, a driver flashing their lights from behind wants you to move right. Move immediately — this is normal and legal. Do not react with anger; just move right.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 5 ════ -->
+<section class="chapter" id="roundabouts">
+<div class="container">
+  <div class="chapter-label">Chapter 5</div>
+  <h2>Roundabouts</h2>
+  <p>European roundabouts flow <strong>clockwise</strong> (opposite to India). Traffic already inside always has priority. Do not push in — wait for a clear gap.</p>
+
+  <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap; margin:24px 0;">
+    <!-- Roundabout diagram -->
+    <svg width="200" height="200" viewBox="0 0 200 200" style="flex-shrink:0;">
+      <!-- outer ring -->
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#ddd" stroke-width="2"/>
+      <!-- road ring -->
+      <circle cx="100" cy="100" r="78" fill="#555" opacity="0.15"/>
+      <circle cx="100" cy="100" r="55" fill="var(--cream)"/>
+      <!-- centre island -->
+      <circle cx="100" cy="100" r="32" fill="#e0dbd0"/>
+      <!-- arrows on ring -->
+      <path d="M 100 25 A 75 75 0 0 1 175 100" stroke="#1a56a0" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <polygon points="174,88 181,103 166,100" fill="#1a56a0"/>
+      <path d="M 175 100 A 75 75 0 0 1 100 175" stroke="#1a56a0" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <polygon points="111,176 97,182 99,166" fill="#1a56a0"/>
+      <!-- Entry roads -->
+      <rect x="88" y="10" width="24" height="30" rx="2" fill="#888" opacity="0.5"/>
+      <rect x="160" y="88" width="30" height="24" rx="2" fill="#888" opacity="0.5"/>
+      <rect x="88" y="160" width="24" height="30" rx="2" fill="#888" opacity="0.5"/>
+      <rect x="10" y="88" width="30" height="24" rx="2" fill="#888" opacity="0.5"/>
+      <!-- Give way lines at entry -->
+      <line x1="88" y1="40" x2="112" y2="40" stroke="#d62828" stroke-width="3" stroke-dasharray="5 4"/>
+      <text x="100" y="112" text-anchor="middle" font-size="9" fill="#666" font-family="Arial">CLOCKWISE</text>
+    </svg>
+
+    <div style="flex:1; min-width:200px;">
+      <ol class="steps">
+        <li><p>Approach in the <strong>right lane</strong> for exits 1–2; left lane for going further round.</p></li>
+        <li><p><strong>Give way</strong> to all vehicles coming from the LEFT — they are already inside.</p></li>
+        <li><p>Enter when there is a clear gap. Never stop inside the roundabout unless traffic is blocked.</p></li>
+        <li><p>Go <strong>clockwise</strong> — keep to the right of the central island.</p></li>
+        <li><p>Indicate <strong>left</strong> as you approach your exit, then exit cleanly.</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="icon">💡</div>
+    <div class="callout-content">
+      <strong>Mini Roundabouts</strong>
+      <p>The UK and Netherlands have tiny painted roundabouts — sometimes just a white circle on the road. Same rules apply: give way to your right, go clockwise.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 6 ════ -->
+<section class="chapter" id="pedestrians">
+<div class="container">
+  <div class="chapter-label">Chapter 6</div>
+  <h2>Pedestrians & Cyclists</h2>
+  <p>In Europe, pedestrians and cyclists have very strong legal protection. Hitting a pedestrian at a zebra crossing almost always results in criminal liability for the driver.</p>
+
+  <div class="section-title">Traffic Light Sequence</div>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; margin:20px 0;">
+    <!-- Red -->
+    <div class="tl-card">
+      <svg width="50" height="110" viewBox="0 0 50 110">
+        <rect x="5" y="5" width="40" height="100" rx="8" fill="#222"/>
+        <circle cx="25" cy="28" r="14" fill="#d62828"/>
+        <circle cx="25" cy="55" r="14" fill="#333"/>
+        <circle cx="25" cy="82" r="14" fill="#333"/>
+      </svg>
+      <div class="tl-label" style="color:var(--red);">RED</div>
+      <div class="tl-desc">Stop completely</div>
+    </div>
+    <!-- Amber -->
+    <div class="tl-card">
+      <svg width="50" height="110" viewBox="0 0 50 110">
+        <rect x="5" y="5" width="40" height="100" rx="8" fill="#222"/>
+        <circle cx="25" cy="28" r="14" fill="#333"/>
+        <circle cx="25" cy="55" r="14" fill="#f77f00"/>
+        <circle cx="25" cy="82" r="14" fill="#333"/>
+      </svg>
+      <div class="tl-label" style="color:#a85f00;">AMBER</div>
+      <div class="tl-desc">Stop if safe — do NOT accelerate</div>
+    </div>
+    <!-- Green -->
+    <div class="tl-card">
+      <svg width="50" height="110" viewBox="0 0 50 110">
+        <rect x="5" y="5" width="40" height="100" rx="8" fill="#222"/>
+        <circle cx="25" cy="28" r="14" fill="#333"/>
+        <circle cx="25" cy="55" r="14" fill="#333"/>
+        <circle cx="25" cy="82" r="14" fill="#2d9e5a"/>
+      </svg>
+      <div class="tl-label" style="color:var(--green);">GREEN</div>
+      <div class="tl-desc">Proceed when safe</div>
+    </div>
+    <!-- Red+Amber -->
+    <div class="tl-card">
+      <svg width="50" height="110" viewBox="0 0 50 110">
+        <rect x="5" y="5" width="40" height="100" rx="8" fill="#222"/>
+        <circle cx="25" cy="28" r="14" fill="#d62828"/>
+        <circle cx="25" cy="55" r="14" fill="#f77f00"/>
+        <circle cx="25" cy="82" r="14" fill="#333"/>
+      </svg>
+      <div class="tl-label" style="color:var(--ink);">RED+AMBER</div>
+      <div class="tl-desc">Prepare — do not go yet</div>
+    </div>
+  </div>
+
+  <div class="callout danger">
+    <div class="icon">🚶</div>
+    <div class="callout-content">
+      <strong>Zebra Crossing — Stop Immediately</strong>
+      <p>As soon as a pedestrian steps onto or even approaches a zebra crossing, you must stop. In India pedestrians yield to cars. In Europe it is completely reversed. Fines: €100–€300.</p>
+    </div>
+  </div>
+
+  <div class="callout warning">
+    <div class="icon">🚲</div>
+    <div class="callout-content">
+      <strong>Cyclists</strong>
+      <p>In the Netherlands, Belgium and Denmark, cyclists have legal priority in many situations. Never park in a cycle lane (red surface with bicycle symbol). Always check for cyclists before turning — they may come up on your inside.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 7 ════ -->
+<section class="chapter" id="parking">
+<div class="container">
+  <div class="chapter-label">Chapter 7</div>
+  <h2>Parking</h2>
+  <p>Incorrect parking means fines, clamping, or towing. Colour-coded road markings tell you the rules at a glance.</p>
+
+  <div class="section-title">Road Marking Colours</div>
+  <table class="data-table">
+    <thead><tr><th>Marking</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span style="display:inline-block;width:40px;height:10px;background:#f9d71c;border-radius:3px;vertical-align:middle;margin-right:8px;"></span><strong>Yellow line</strong></td>
+        <td>No parking at certain times — check the sign. Double yellow = no parking ever.</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:40px;height:10px;background:#1a56a0;border-radius:3px;vertical-align:middle;margin-right:8px;"></span><strong>Blue zone</strong></td>
+        <td>Time-limited. Display a parking disc or pay-and-display ticket showing arrival time.</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:40px;height:10px;background:white;border:2px solid #ccc;border-radius:3px;vertical-align:middle;margin-right:8px;"></span><strong>White lines / P sign</strong></td>
+        <td>Paid or free parking — always confirm with the sign above.</td>
+      </tr>
+      <tr>
+        <td><span style="display:inline-block;width:40px;height:10px;background:#d62828;border-radius:3px;vertical-align:middle;margin-right:8px;"></span><strong>Red lines</strong></td>
+        <td>No stopping at all (UK red routes).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout danger">
+    <div class="icon">🇮🇹</div>
+    <div class="callout-content">
+      <strong>ZTL Zones in Italian Cities</strong>
+      <p>Italian historic centres have camera-controlled ZTL (Zona Traffico Limitato) zones. Entering without a permit results in fines mailed weeks later — even to India via the rental company. Ask your hotel or check Google Maps before entering any Italian city centre.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 8 ════ -->
+<section class="chapter" id="legal">
+<div class="container">
+  <div class="chapter-label">Chapter 8</div>
+  <h2>Alcohol, Phones & Legal Essentials</h2>
+
+  <div class="section-title">Blood Alcohol Limits</div>
+  <table class="data-table">
+    <thead><tr><th>Limit</th><th>Countries</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag tag-red">0.00% — Zero</span></td><td>Czech Republic, Hungary, Romania, Slovakia, Serbia</td></tr>
+      <tr><td><span class="tag tag-amber">0.02%</span></td><td>Sweden, Norway, Poland</td></tr>
+      <tr><td><span class="tag tag-green">0.05%</span></td><td>Most of Europe (Germany, France, Italy, Spain, etc.)</td></tr>
+      <tr><td><span class="tag tag-blue">0.08%</span></td><td>England & Wales, Luxembourg</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <div class="icon">🍺</div>
+    <div class="callout-content">
+      <strong>Safest Rule: Don't Drink at All If You Drive</strong>
+      <p>France requires you to carry a disposable breathalyser. Roadside checks are common at night and around festivals. Penalties include on-the-spot fines and confiscation of your licence.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Mobile Phones</div>
+  <ul class="checklist">
+    <li><span class="check" style="color:var(--red);">✗</span> Handheld phone while driving — illegal everywhere in Europe. Fines €200–€800.</li>
+    <li><span class="check">✓</span> Hands-free set allowed in most countries — mount your phone before setting off.</li>
+    <li><span class="check">✓</span> Pull over and stop the engine completely before texting or calling.</li>
+  </ul>
+
+  <div class="section-title">Mandatory Items to Keep in the Car</div>
+  <table class="data-table">
+    <thead><tr><th>Item</th><th>Required In</th></tr></thead>
+    <tbody>
+      <tr><td>⚠️ Warning triangle</td><td>All of Europe</td></tr>
+      <tr><td>🦺 Hi-visibility vest</td><td>France, Spain, Italy, Austria and most others</td></tr>
+      <tr><td>🩺 First aid kit</td><td>Germany, Austria, Czech Republic and others</td></tr>
+      <tr><td>🚒 Fire extinguisher</td><td>Greece, some Eastern European countries</td></tr>
+      <tr><td>💡 Spare bulbs</td><td>France (recommended), Czech Republic</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="icon">🚗</div>
+    <div class="callout-content">
+      <strong>Renting a Car?</strong>
+      <p>Most of these items are already in rental cars. Confirm with the rental company before you drive. Always write their breakdown number on paper before setting off.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHAPTER 9 ════ -->
+<section class="chapter" id="countries">
+<div class="container">
+  <div class="chapter-label">Chapter 9</div>
+  <h2>Country-Specific Rules</h2>
+  <p>Each country has quirks on top of the European standard. Here are the most important ones for popular destinations.</p>
+
+  <div class="country-grid">
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇩🇪</div><div class="country-name">Germany</div></div>
+      <ul class="country-body">
+        <li>No speed limit on parts of Autobahn (advisory 130)</li>
+        <li>Left lane strictly for overtaking — camping there is illegal</li>
+        <li>Tailgating (Drängeln) is illegal and heavily fined</li>
+        <li>Flashing lights from behind = please move right</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇫🇷</div><div class="country-name">France</div></div>
+      <ul class="country-body">
+        <li>Speed camera locations banned from GPS apps</li>
+        <li>Carry a disposable breathalyser</li>
+        <li>Priorité à droite — give way to the right at unmarked junctions</li>
+        <li>Paris bus/cycle lanes: do not use them</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇮🇹</div><div class="country-name">Italy</div></div>
+      <ul class="country-body">
+        <li>ZTL zones in most city centres — check before entering</li>
+        <li>Headlights mandatory on all roads outside urban areas</li>
+        <li>Tutor average-speed cameras on motorways</li>
+        <li>Police can collect fines on the spot from foreign drivers</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇪🇸</div><div class="country-name">Spain</div></div>
+      <ul class="country-body">
+        <li>Spare glasses required if you need them to drive</li>
+        <li>Spare wheel or tyre inflation kit mandatory</li>
+        <li>Radar detectors illegal</li>
+        <li>DGT speed cameras are unmarked mobile units</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇳🇱</div><div class="country-name">Netherlands</div></div>
+      <ul class="country-body">
+        <li>Cyclists have right of way in most situations</li>
+        <li>Some of the highest fines in Europe</li>
+        <li>Motorway limit 100 km/h (day), 130 at night on some roads</li>
+        <li>Trams always have priority in cities</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇬🇧</div><div class="country-name">United Kingdom</div></div>
+      <ul class="country-body">
+        <li>Drive on the LEFT — same as India</li>
+        <li>Speed in miles per hour (not km/h)</li>
+        <li>London Congestion Charge: £15/day — pay online in advance</li>
+        <li>Speed cameras everywhere; average-speed cameras on motorways</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇨🇭</div><div class="country-name">Switzerland</div></div>
+      <ul class="country-body">
+        <li>Motorway vignette (sticker) required — buy at the border</li>
+        <li>Trams always have priority, even over pedestrian crossings</li>
+        <li>Speed enforcement among the strictest in Europe</li>
+        <li>Fines based on income — can be very high for wealthy drivers</li>
+      </ul>
+    </div>
+    <div class="country-card">
+      <div class="country-header"><div class="country-flag">🇦🇹</div><div class="country-name">Austria</div></div>
+      <ul class="country-body">
+        <li>Motorway vignette compulsory</li>
+        <li>Winter tyres mandatory in winter conditions</li>
+        <li>Chains recommended in Alpine areas</li>
+        <li>Right of way to trams at all times</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════ CHECKLIST ════ -->
+<section class="chapter" id="checklist">
+<div class="container">
+  <div class="chapter-label">Pre-Drive Checklist</div>
+  <h2>Before You Start the Engine</h2>
+  <p>Run through this every time you get in the car in Europe.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:24px;">
+    <div>
+      <div class="section-title" style="margin-top:0;">📄 Documents</div>
+      <ul class="checklist">
+        <li><span class="check">✓</span>Original Indian driving licence</li>
+        <li><span class="check">✓</span>International Driving Permit (IDP)</li>
+        <li><span class="check">✓</span>Passport (carry at all times)</li>
+        <li><span class="check">✓</span>Rental agreement & insurance</li>
+        <li><span class="check">✓</span>Breakdown number written on paper</li>
+      </ul>
+    </div>
+    <div>
+      <div class="section-title" style="margin-top:0;">🚗 In the Car</div>
+      <ul class="checklist">
+        <li><span class="check">✓</span>Warning triangle in boot</li>
+        <li><span class="check">✓</span>Hi-vis vest in passenger cabin</li>
+        <li><span class="check">✓</span>First aid kit present</li>
+        <li><span class="check">✓</span>Motorway vignette if needed</li>
+        <li><span class="check">✓</span>Phone mounted, not in hand</li>
+      </ul>
+    </div>
+    <div>
+      <div class="section-title" style="margin-top:0;">🧠 Mental Reminders</div>
+      <ul class="checklist">
+        <li><span class="check">✓</span>Drive on the RIGHT (except UK/Ireland)</li>
+        <li><span class="check">✓</span>Stay in the rightmost lane</li>
+        <li><span class="check">✓</span>Roundabouts: give way to traffic inside</li>
+        <li><span class="check">✓</span>Stop fully at every STOP sign</li>
+        <li><span class="check">✓</span>Pedestrians at zebra crossings = stop</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout success" style="margin-top:36px;">
+    <div class="icon">✅</div>
+    <div class="callout-content">
+      <strong>You've Got This</strong>
+      <p>European roads are well-maintained and orderly. Follow the signs, be patient, and yield generously. Once you get past the first few hours, driving in Europe is a genuinely enjoyable experience. Safe travels! 🛣️</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;margin-bottom:6px;">European Driving Crash Course</div>
+  <p>For Indian Drivers Travelling to Europe</p>
+  <p style="margin-top:8px;opacity:0.5;font-size:0.75rem;">✦ Generated by AI &nbsp;·&nbsp; Proofread by Humans ✦</p>
+  <p style="margin-top:16px;">Always verify country-specific rules before your trip, as regulations may change. Carry your original licence and IDP at all times.</p>
+  <div style="margin-top:20px;">
+    <a href="european_driving_quiz.html" style="display:inline-block;background:#f77f00;color:white;text-decoration:none;padding:10px 24px;border-radius:20px;font-weight:700;font-size:0.9rem;">🧠 Take the Practice Quiz →</a>
+  </div>
+</footer>
+
+<script>
+  // Respect system preference on load
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('theme');
+  const theme = saved || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+  updateBtn(theme);
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateBtn(next);
+  }
+  function updateBtn(t) {
+    const btn = document.getElementById('themeBtn');
+    if (btn) btn.textContent = t === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
+</script>
+</body>
+</html>
