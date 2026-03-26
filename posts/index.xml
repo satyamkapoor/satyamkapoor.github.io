@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>satyam@satyamkapoor.com (Satyam Kapoor)</managingEditor><webMaster>satyam@satyamkapoor.com (Satyam Kapoor)</webMaster><lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Generated Experiments – European Driving Resources</title><link>https://satyamkapoor.com/posts/ai-generated-experiments/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/ai-generated-experiments/</guid><description>One of my long-desired AI experiments: creating practical learning resources for Indians moving to Europe using Claude and Nemotron models.</description><content type="html"><![CDATA[<h2 id="one-of-my-long-desired-ai-experiments">One of My Long-Desired AI Experiments</h2>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>satyam@satyamkapoor.com (Satyam Kapoor)</managingEditor><webMaster>satyam@satyamkapoor.com (Satyam Kapoor)</webMaster><lastBuildDate>Mon, 15 Jul 2024 21:43:28 +0200</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Generated Experiments – European Driving Resources</title><link>https://satyamkapoor.com/posts/ai-generated-experiments/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/ai-generated-experiments/</guid><description>One of my long-desired AI experiments: creating practical learning resources for Indians moving to Europe using Claude and Nemotron models.</description><content type="html"><![CDATA[<h2 id="one-of-my-long-desired-ai-experiments">One of My Long-Desired AI Experiments</h2>
 <p>For quite some time, I&rsquo;ve wanted to experiment with using AI to create genuinely useful, practical learning resources. This post represents one such experiment - combining AI generation with real-world utility.</p>
 <p>I&rsquo;ve generated two companion resources using <strong>Claude Sonnet 4.6</strong>:</p>
 <h3 id="-european-driving-handbook-crash-course">📚 European Driving Handbook (Crash Course)</h3>
@@ -11,6 +11,82 @@
 <p>These resources aim to solve a real problem: helping Indians navigate the complexities of European driver licensing systems when they first arrive. Rather than just theoretical experiments, I wanted to create something actually useful.</p>
 <p>Feel free to explore both resources and see how AI can be leveraged for practical educational content. I&rsquo;d love to hear your thoughts or suggestions!</p>
 <hr>
+]]></content></item><item><title>I need my points - identication at McDonalds Drive-Thru</title><link>https://satyamkapoor.com/posts/session-codes-for-identification-at-mcdonalds/</link><pubDate>Thu, 19 Jun 2025 21:20:08 +0200</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/session-codes-for-identification-at-mcdonalds/</guid><description>Discover how McDonalds smartly identify users via 4 character codes</description><content type="html"><![CDATA[<p>You know the best part about a public holiday? Empty roads, empty trains, and that rare feeling of a car-free city. There’s less stress searching for an open coffee shop—because, let’s face it, McDonald’s is often the only place open around here. 😅</p>
+<p>Lately, we’ve made it a tradition as a family to do the Sunday McDonald’s run, treating ourselves to their “new” Iced Caramel Latte. But here’s the thing: I never bothered collecting loyalty points. Honestly, I wasn’t sure how it worked when ordering from my car. The idea of showing a QR code while sitting in the car, to a person on the speaker looked like too much effort.
+Today, I finally decided to ask at the drive-thru if I could collect points. To my surprise, the staff just asked for my 4-character code from the McDonald’s app. I gave it, and—voilà!—points added.</p>
+<br>
+<p>
+    <img src="/images/journal/mcdonalds.jpg"  alt="Hello Friend"  class="left"  style="border-radius: 8px;width: 50%; height: auto;"  />
+
+
+<br></p>
+<p>As I waited for my order, I started thinking: how does this work? If they identify me with just a 4-character code, does that mean only 10,000 people can collect points (since 4 characters could mean 10,000 combinations)? That didn’t seem right.</p>
+<p>Curious, I opened the app, found my code, and took a screenshot. Instantly, a pop-up appeared: “This code is valid for 2 minutes and will change if you restart the app.” Mystery solved! It’s a session code—unique, temporary, and refreshed every time you open the app. A pretty clever way to securely and smoothly collect loyalty points and identify users.</p>
+<p>Thankfully, I’m no longer missing out on points! 😄</p>
+]]></content></item><item><title>Germany's Unique User Authentication</title><link>https://satyamkapoor.com/posts/germanys-unique-user-authentication/</link><pubDate>Mon, 15 Jul 2024 21:34:08 +0200</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/germanys-unique-user-authentication/</guid><description>Discover how Germany&amp;rsquo;s authentication methods differ from India and Belgium, using mailbox codes for user verification across applications.</description><content type="html"><![CDATA[<p>Having grown accustomed to receiving one-time passwords via SMS for user authentication back in India, my transition to Belgium introduced me to the convenience of e-ID cards and TOTPs for authentication.</p>
+<p>However, my move to Germany unveiled a unique authentication process across various applications. Whether it&rsquo;s filing taxes, accessing health insurance apps for digital health records, or managing deliveries through the DHL app, I found myself relying on codes sent to my mailbox for verification. The shift to this method has been both surprising and intriguing! 😮</p>
+<p><img src="/images/otp.jpg" alt="OTP Via POST in Germany"></p>
+<p>Waiting for my OTP so I can collect my package from packstation&hellip;</p>
+]]></content></item><item><title>Culinary Delights in Brussels 🇧🇪</title><link>https://satyamkapoor.com/posts/culinary-delights-in-belgium/</link><pubDate>Thu, 09 May 2024 22:00:01 +0200</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/culinary-delights-in-belgium/</guid><description>Best food places in Brussels curated by Satyam Kapoor</description><content type="html"><![CDATA[<p>Start your culinary journey with the perfect soundtrack and immerse yourself in the flavors and rhythms of Belgium along with exploring the city&rsquo;s best bites.</p>
+
+   <center> <iframe src="https://open.spotify.com/embed/track/4sOjKbpa7RLZVRNxcO26eb?utm_source=generator&amp;theme=0" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></center>
+
+
+
+<h3 id="breakfast-in-brussels">Breakfast in Brussels</h3>
+<ul>
+<li>
+<p><a href="https://leopoldcafepresse.com/">Leopold Café Presse, Etterbeek</a>: Discover a cozy morning sanctuary perfect for lazy brunches or spontaneous meetups. At Leopold Café Presse, savor their invigorating mint tea and indulge in their signature toast omelette amidst a vibrant atmosphere and eclectic beer selection.</p>
+<p><code>Tried and loved: Mint tea with toast &amp; omelette 🍵🍳</code></p>
+</li>
+<li>
+<p><a href="https://maps.app.goo.gl/PKvmjpHPuUJKfsSy7">Paul, Etterbeek</a>: Immerse yourself in authentic French bakery delights at Paul. Known for its impeccable quality and freshly baked goods, Paul offers a delightful array of pastries, bread, and coffee. Don&rsquo;t miss their perfectly flaky croissants prepared fresh every morning.</p>
+<p><code>☕ Great coffee and fresh croissants 🥐</code></p>
+</li>
+<li>
+<p><a href="https://maps.app.goo.gl/krRbFQxKYHdP57zv7">Brunch Corner, Schaerbeek</a>: Embark on a culinary journey at Brunch Corner in Schaerbeek, a hidden gem offering a delightful Turkish breakfast/brunch experience with a wide array of vegetarian options. From savory böreks to fluffy borek, indulge in the vibrant flavors of Turkish cuisine in a warm and inviting atmosphere.
+<code>Cuisine: Turkish</code></p>
+</li>
+<li>
+<p><a href="http://www.lafabriqueresto.be/">La Fabrique, Brussels</a>: Nestled in a scenic park in Brussels&rsquo; city center, La Fabrique offers a charming ambiance but may suffer from disorganized seating despite reservations. Despite this, it delights with a diverse menu featuring vegetarian and vegan options. However, portion sizes may leave diners wanting more. Despite minor setbacks, La Fabrique remains a promising culinary spot, providing a tranquil escape amidst the city&rsquo;s hustle.
+<code>Located in a small park 🌿</code></p>
+</li>
+</ul>
+<h3 id="brunch-and-dinner">Brunch and Dinner</h3>
+<ul>
+<li>
+<p><a href="https://www.manhattns.com/">Manhattn Burgers</a>: Indulge in amazing burgers with fries and homemade lemonade at Manhattn Burgers. Don&rsquo;t miss out on trying their secret sauce with fries for a flavor-packed experience. Vegetarians will also find delight in their Brooklyn Falafel Burger.</p>
+</li>
+<li>
+<p><a href="https://lapiolapizza.com/">La Piola Pizza</a>: Experience authentic Italian flavors at La Piola Pizza, where each bite transports you to the streets of Naples. From classic margheritas to gourmet creations, their pizzas are a must-try for any pizza enthusiast.</p>
+</li>
+<li>
+<p><a href="https://www.demasalabox.com/">De Masala Box</a>: Savor the fusion of Indian and international flavors at De Masala Box, where traditional Indian wraps meet modern culinary innovation. Don&rsquo;t miss their tantalizing Indian fusion wraps bursting with spices and flavors.</p>
+</li>
+<li>
+<p><a href="https://www.nonalife.com/">Nona Pizza</a>: Treat yourself to the taste of Italy at Nona Pizza, where artisanal pizzas are crafted with the finest ingredients and baked to perfection in a wood-fired oven. From classic favorites to creative combinations, there&rsquo;s a pizza for every palate at Nona Pizza.</p>
+</li>
+<li>
+<p><a href="https://www.albacioixelles.com/">Al Baccio Pizzeria</a>: Dive into a slice of Italy at Al Baccio Pizzeria, where authentic Neapolitan pizzas are served with a smile. With a focus on quality ingredients and traditional recipes, each bite is a taste of Italy&rsquo;s culinary heritage.</p>
+</li>
+<li>
+<p><a href="https://saravanaabhavan.eu/brussels/">Saravana Bhawan</a>: Embark on a gastronomic journey to South India at Saravana Bhawan, renowned for its authentic vegetarian cuisine and traditional flavors. From dosas to idlis, every dish is a celebration of South Indian culinary excellence.</p>
+</li>
+<li>
+<p><a href="https://www.facebook.com/kingofshawarma.be/">King of Shawarma Saint Josse Ten Noode</a>: Indulge in the rich flavors of Syrian cuisine at King of Shawarma Saint Josse Ten Noode, where succulent shawarmas and flavorful falafels are served with warm hospitality. Each bite is a taste of Middle Eastern tradition and hospitality.</p>
+</li>
+<li>
+<p><a href="https://youwok.be/nl/">You Wok</a>: Dive into a world of noodles and rice at You Wok, where fresh ingredients and bold flavors come together to create mouthwatering Asian-inspired dishes. Whether you crave spicy noodles or fragrant rice, You Wok has something to satisfy every craving.</p>
+</li>
+</ul>
+<h3 id="247-emergency-food">24/7 Emergency Food</h3>
+<ul>
+<li><a href="https://maps.app.goo.gl/mYzB65AXYvPnUYHq8">Esso Gas Station</a>: Need a quick bite on the go? Head to Esso Gas Station for 24/7 convenience and a variety of food options to fuel your journey. From sandwiches to pizza and pasta, you&rsquo;ll find everything you need to satisfy your hunger, anytime, anywhere.</li>
+</ul>
+<h3 id="best-snack-place">Best Snack Place</h3>
+<ul>
+<li><a href="https://duckduckgo.com/?q=snack&#43;tomberg&amp;t=newext&amp;atb=v361-1&amp;ia=web&amp;iaxm=places">Snack Tomberg</a>: For the best snacks in town, look no further than Snack Tomberg. Whether you&rsquo;re craving crispy fries, savory sandwiches, or indulgent burgers, Snack Tomberg has something to satisfy.</li>
+</ul>
 ]]></content></item><item><title>GoodBye Ads, Welcome NextDNS!</title><link>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</link><pubDate>Sun, 13 Feb 2022 20:07:25 +0100</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/goodbye-trackers-welcome-nextdns/</guid><description>If you love PiHole but love to get it with you without setting up a VPN, then moving to nextDNS might be an option. NextDNS is a PiHole alike cloud DNS adblocker based in the EU.</description><content type="html"><![CDATA[<p>I hear you right there.</p>
 <p>I know you&rsquo;ve got browser addons like uBlockOrigin, AdGuard and rest. I understand you&rsquo;ve even moved to Brave/DuckDuckGo browser to get off Ads &amp; trackers.</p>
 <p><strong>Congratulations!</strong> These are all great ways to achieve the goal to get off trackers &amp; Ads. Not forgetting we&rsquo;re at last homosapiens and are needs are different.</p>
@@ -27,15 +103,15 @@
 <p>It&rsquo;s free upto 300,000 queries a month. You can always choose to go with the Pro pack which is €19.90/year. It allows Unlimited queries (ofcourse) along with ability to share it with your close family &amp; friends.</p>
 <p>Make sure to explain your family &amp; friends that you can see their logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
 <p>Here are some screenshots from nextDNS UI.</p>
-<h2 id="hahahugoshortcode10s0hbhb">
+<h2 id="hahahugoshortcode8s0hbhb">
     <img src="/images/nextDNS/analytics_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode10s1hbhb">
+<h2 id="hahahugoshortcode8s1hbhb">
     <img src="/images/nextDNS/analytics_graph_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode10s2hbhb">
+<h2 id="hahahugoshortcode8s2hbhb">
     <img src="/images/nextDNS/parental_control_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
