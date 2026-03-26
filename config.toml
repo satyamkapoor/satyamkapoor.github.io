@@ -104,15 +104,6 @@ pagination.pagerSize = 10
     name       = "Photography"
     url        = "https://unsplash.com/@satyamkapoor"
 
-  [[menu.main]]
-    identifier = "journal"
-    name       = "Journal"
-    url        = "/journal"
-
-  [[menu.main]]
-    identifier = "euroventures"
-    name       = "Euroventures"
-    url        = "/euroventures"
 
     
 [markup]
