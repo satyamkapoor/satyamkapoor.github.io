@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main aria-role="main">
+    <div>
+        {{ if .Site.Params.Portrait.Path }}
+        <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}"
+            style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+        {{ end }}
+
+        <h1>Satyam Kapoor</h1>
+
+        {{- with .Site.Params.social }}
+        <div>
+            {{ partial "social-icons.html" . }}
+        </div>
+        {{- end }}
+
+        <p class="homepage-bio">
+            Hi there! I'm Satyam Kapoor—a tech enthusiast with a global perspective. Born and raised in India, I've
+            spent two-thirds of my life there before moving to Europe. Today, I call Frankfurt home, but I
+            consider myself a citizen of the world.<br><br>
+            As a Site Reliability Engineer, I'm passionate about building reliable systems and exploring the latest
+            engineering innovations that make a real impact on people's lives. Whether it's streamlining workflows,
+            enhancing security, or making technology more accessible, I love discovering solutions that help others
+            achieve more.<br><br>
+            I write about technology, home automation, DevOps, and the internet on my <a href="posts">blog</a>, where I share
+            both professional insights and personal stories from my daily adventures and experiences.
+        </p>
+
+        &nbsp;
+    </div>
+</main>
+{{ end }}
