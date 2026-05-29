@@ -250,6 +250,24 @@ pre {
   color: var(--warm-muted) !important;
 }
 
+/* ── Homepage: keep content within the viewport on mobile ────────────── */
+/* The theme's `.content` uses `align-items: center`, which sizes the homepage
+   <main> to its max-content (unwrapped) width — so text never wraps and
+   overflows narrow screens. Switch to `stretch` so children get the real
+   available width and wrap. Content pages (.post/.posts) self-center via their
+   own max-width + margin, so they're unaffected. */
+.content { align-items: stretch; }
+main[aria-role="main"] {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+main[aria-role="main"] h1 { overflow-wrap: break-word; }
+@media (max-width: 684px) {
+  main[aria-role="main"] h1 { font-size: 1.85rem; }
+}
+
 /* ── Homepage bio ────────────────────────────────────────────────────── */
 .homepage-bio {
   max-width: 580px;
