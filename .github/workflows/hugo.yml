@@ -24,7 +24,9 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify 
+        run: hugo --minify
+        env:
+          HUGO_UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,0 +1,179 @@
+{{ define "main" }}
+<main class="post photography">
+    <article>
+        {{/* ── Fetch photos from the Unsplash API at build time ──────────────
+             The list endpoint gives URLs/colour; per-photo detail endpoints
+             add EXIF + location. Key comes from HUGO_UNSPLASH_ACCESS_KEY
+             (a GitHub Actions secret in CI). Nothing is committed — images
+             are hotlinked from Unsplash's CDN. */}}
+        {{ $username := .Param "unsplashUser" | default "satyamkapoor" }}
+        {{ $key := getenv "HUGO_UNSPLASH_ACCESS_KEY" }}
+        {{ $photos := slice }}
+
+        {{ if $key }}
+            {{ range $page := (seq 1 4) }}
+                {{ $url := printf "https://api.unsplash.com/users/%s/photos?per_page=30&page=%d&order_by=latest&client_id=%s" $username $page $key }}
+                {{ $batch := slice }}
+                {{ with try (resources.GetRemote $url) }}
+                    {{ with .Err }}
+                        {{ warnf "Unsplash fetch failed (page %d): %s" $page . }}
+                    {{ else with .Value }}
+                        {{ $batch = . | transform.Unmarshal }}
+                    {{ end }}
+                {{ end }}
+                {{ if $batch }}
+                    {{ range $batch }}{{ $photos = $photos | append . }}{{ end }}
+                {{ else }}
+                    {{ break }}
+                {{ end }}
+            {{ end }}
+        {{ else }}
+            {{ warnf "HUGO_UNSPLASH_ACCESS_KEY not set — photography gallery is empty; showing Unsplash fallback link." }}
+        {{ end }}
+
+        <header class="gallery-head">
+            <p class="gallery-eyebrow">Photography &mdash; <a href="https://unsplash.com/@{{ $username }}?utm_source=satyamkapoor&amp;utm_medium=referral" target="_blank" rel="noopener">@{{ $username }}</a></p>
+            <h1 class="gallery-title">{{ .Title }}</h1>
+            <div class="gallery-intro">{{ .Content }}</div>
+            {{ with $photos }}<p class="gallery-counter">{{ len . }} frames</p>{{ end }}
+        </header>
+
+        {{ with $photos }}
+            <div class="photo-gallery">
+                {{ range $i, $p := . }}
+                    {{/* Per-photo detail fetch for EXIF + location (cached by Hugo). */}}
+                    {{ $detail := dict }}
+                    {{ $durl := printf "https://api.unsplash.com/photos/%s?client_id=%s" $p.id $key }}
+                    {{ with try (resources.GetRemote $durl) }}
+                        {{ with .Err }}
+                            {{ warnf "Unsplash detail fetch failed (%s): %s" $p.id . }}
+                        {{ else with .Value }}
+                            {{ $detail = . | transform.Unmarshal }}
+                        {{ end }}
+                    {{ end }}
+
+                    {{/* ── Build the spec line ──────────────────────────── */}}
+                    {{ $specs := slice }}
+                    {{ with $detail.exif }}
+                        {{ $mk := .make | default "" | strings.TrimSpace }}
+                        {{ $md := .model | default "" | strings.TrimSpace }}
+                        {{ $cam := $md }}
+                        {{ if and $mk (not (hasPrefix (lower $md) (lower $mk))) }}{{ $cam = printf "%s %s" $mk $md }}{{ end }}
+                        {{ $cam = $cam | default $mk | strings.TrimSpace }}
+                        {{ with $cam }}{{ $specs = $specs | append . }}{{ end }}
+                        {{ with .focal_length }}{{ $specs = $specs | append (printf "%smm" (strings.TrimSuffix ".0" .)) }}{{ end }}
+                        {{ with .aperture }}{{ $specs = $specs | append (printf "&fnof;/%s" .) }}{{ end }}
+                        {{ with .exposure_time }}{{ $specs = $specs | append (printf "%ss" .) }}{{ end }}
+                        {{ with .iso }}{{ $specs = $specs | append (printf "ISO&nbsp;%v" .) }}{{ end }}
+                    {{ end }}
+                    {{ $specStr := delimit $specs "  &middot;  " }}
+
+                    {{ $loc := "" }}
+                    {{ with $detail.location }}
+                        {{ $nm := .name | default "" | strings.TrimSpace }}
+                        {{ if $nm }}{{ $loc = delimit (split $nm ", " | uniq) ", " }}
+                        {{ else }}{{ $loc = delimit (slice .city .country | uniq | complement (slice "" nil)) ", " }}{{ end }}
+                    {{ end }}
+
+                    {{ $alt := $p.alt_description | default $p.description | default "Photograph by Satyam Kapoor" }}
+                    {{ $ratio := 1.5 }}{{ if and $p.width $p.height }}{{ $ratio = div (float $p.width) (float $p.height) }}{{ end }}
+
+                    <figure class="photo-item{{ if gt $ratio 1.7 }} is-wide{{ end }}"
+                            style="--i: {{ $i }};"
+                            data-large="{{ $p.urls.regular }}"
+                            data-link="{{ $p.links.html }}?utm_source=satyamkapoor&amp;utm_medium=referral"
+                            data-alt="{{ $alt }}"
+                            data-loc="{{ $loc }}"
+                            data-specs="{{ $specStr }}"
+                            data-color="{{ $p.color }}">
+                        <button class="photo-trigger" aria-label="Open {{ $alt }}">
+                            <img src="{{ $p.urls.small }}"
+                                 alt="{{ $alt }}"
+                                 width="{{ $p.width }}" height="{{ $p.height }}"
+                                 loading="lazy"
+                                 style="background-color: {{ $p.color }};"
+                                 onload="this.closest('.photo-item').classList.add('is-loaded')">
+                        </button>
+                        <figcaption>
+                            {{ with $loc }}<span class="photo-loc">{{ . }}</span>{{ end }}
+                            {{ with $specStr }}<span class="photo-specs">{{ . | safeHTML }}</span>{{ end }}
+                        </figcaption>
+                    </figure>
+                {{ end }}
+            </div>
+
+            <p class="photo-credit">
+                Photographs hosted on
+                <a href="https://unsplash.com/@{{ $username }}?utm_source=satyamkapoor&amp;utm_medium=referral" target="_blank" rel="noopener">Unsplash</a>.
+                Open any frame for full metadata, or click through for full resolution.
+            </p>
+
+            {{/* ── Lightbox ─────────────────────────────────────────────── */}}
+            <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+                <div class="lb-backdrop" data-lb-close></div>
+                <button class="lb-btn lb-close" data-lb-close aria-label="Close">&times;</button>
+                <button class="lb-btn lb-prev" aria-label="Previous">&lsaquo;</button>
+                <button class="lb-btn lb-next" aria-label="Next">&rsaquo;</button>
+                <figure class="lb-stage">
+                    <div class="lb-frame"><img class="lb-img" src="" alt=""></div>
+                    <figcaption class="lb-meta">
+                        <span class="lb-count"></span>
+                        <span class="lb-loc"></span>
+                        <span class="lb-specs"></span>
+                        <a class="lb-link" href="" target="_blank" rel="noopener">View full resolution &rarr;</a>
+                    </figcaption>
+                </figure>
+            </div>
+        {{ else }}
+            <p class="gallery-empty">My photography lives on
+                <a href="https://unsplash.com/@{{ $username }}" target="_blank" rel="noopener">Unsplash&nbsp;&rarr; @{{ $username }}</a>.
+            </p>
+        {{ end }}
+    </article>
+</main>
+
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.photo-item'));
+  if (!items.length) return;
+  var lb = document.getElementById('lightbox');
+  if (!lb) return;
+  var img   = lb.querySelector('.lb-img');
+  var count = lb.querySelector('.lb-count');
+  var loc   = lb.querySelector('.lb-loc');
+  var specs = lb.querySelector('.lb-specs');
+  var link  = lb.querySelector('.lb-link');
+  var current = 0;
+
+  function render(i) {
+    var el = items[i];
+    current = i;
+    img.style.opacity = 0;
+    var next = new Image();
+    next.onload = function () { img.src = next.src; img.style.opacity = 1; };
+    next.src = el.getAttribute('data-large');
+    img.alt = el.getAttribute('data-alt') || '';
+    count.textContent = String(i + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0');
+    loc.textContent = el.getAttribute('data-loc') || '';
+    specs.innerHTML = el.getAttribute('data-specs') || '';
+    link.href = el.getAttribute('data-link') || '#';
+  }
+  function open(i) { render(i); lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+  function step(d) { render((current + d + items.length) % items.length); }
+
+  items.forEach(function (el, i) {
+    el.querySelector('.photo-trigger').addEventListener('click', function () { open(i); });
+  });
+  lb.querySelectorAll('[data-lb-close]').forEach(function (b) { b.addEventListener('click', close); });
+  lb.querySelector('.lb-prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { step(1); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+})();
+</script>
+{{ end }}

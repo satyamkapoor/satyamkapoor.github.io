@@ -1,0 +1,17 @@
+<script defer data-domain="satyamkapoor.com" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var bar = document.createElement('div');
+  bar.id = 'reading-progress-bar';
+  var inner = document.createElement('div');
+  inner.id = 'reading-progress';
+  bar.appendChild(inner);
+  document.body.insertBefore(bar, document.body.firstChild);
+
+  window.addEventListener('scroll', function() {
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    inner.style.width = Math.min((window.scrollY / docHeight) * 100, 100) + '%';
+  }, { passive: true });
+});
+</script>

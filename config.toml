@@ -13,6 +13,7 @@ pagination.pagerSize = 10
 
 
 [params]
+  customCSS = ["/css/custom.css"]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
@@ -102,7 +103,7 @@ pagination.pagerSize = 10
   [[menu.main]]
     identifier = "photography"
     name       = "Photography"
-    url        = "https://unsplash.com/@satyamkapoor"
+    url        = "/photography"
 
 
     
