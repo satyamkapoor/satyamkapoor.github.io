@@ -272,7 +272,8 @@ main[aria-role="main"] h1 { overflow-wrap: break-word; }
 .homepage-bio {
   max-width: 580px;
   margin: 1.5em auto;
-  text-align: left;
+  text-align: justify;
+  hyphens: auto;
   line-height: 1.75;
 }
 
