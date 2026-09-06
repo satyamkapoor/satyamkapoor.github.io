@@ -1,4 +1,56 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>satyam@satyamkapoor.com (Satyam Kapoor)</managingEditor><webMaster>satyam@satyamkapoor.com (Satyam Kapoor)</webMaster><lastBuildDate>Mon, 15 Jul 2024 21:43:28 +0200</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>AI Generated Experiments – European Driving Resources</title><link>https://satyamkapoor.com/posts/ai-generated-experiments/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/ai-generated-experiments/</guid><description>One of my long-desired AI experiments: creating practical learning resources for Indians moving to Europe using Claude and Nemotron models.</description><content type="html"><![CDATA[<h2 id="one-of-my-long-desired-ai-experiments">One of My Long-Desired AI Experiments</h2>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</title><link>https://satyamkapoor.com/posts/</link><description>Recent content in Posts on Satyam Kapoor | Site Reliability Engineer based in Frankfurt, Germany</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>satyam@satyamkapoor.com (Satyam Kapoor)</managingEditor><webMaster>satyam@satyamkapoor.com (Satyam Kapoor)</webMaster><lastBuildDate>Mon, 15 Jul 2024 21:43:28 +0200</lastBuildDate><atom:link href="https://satyamkapoor.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Rail travel across EU? Let's try!</title><link>https://satyamkapoor.com/posts/rail-travel-across-eu/</link><pubDate>Thu, 18 Jun 2026 13:52:58 +0300</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/rail-travel-across-eu/</guid><description>&lt;p>This summer, we decided to embark on a long distance train journey. You&amp;rsquo;d ask why? Especially when train tickets are supposedly more expensive, reliability is questionable, and when Europe is getting hit with scorching high temperatures. I still do not have a clear answer, it just felt more free - we could get off and board at any stop, in any country. Also, a car isn&amp;rsquo;t an option with a toddler who hates to sit calmly in it for more than 20 minutes.&lt;/p></description><content type="html"><![CDATA[<p>This summer, we decided to embark on a long distance train journey. You&rsquo;d ask why? Especially when train tickets are supposedly more expensive, reliability is questionable, and when Europe is getting hit with scorching high temperatures. I still do not have a clear answer, it just felt more free - we could get off and board at any stop, in any country. Also, a car isn&rsquo;t an option with a toddler who hates to sit calmly in it for more than 20 minutes.</p>
+<figure class="center"><img src="/images/eurorailtrip/IMG_6741.jpeg" alt="Some trains were quite fancy, like this [Snälltåget](https://www.railwaygazette.com/archive/2026/05/05/snalltaget-kickstarts-direct-daytime-hamburg-copenhagen-stockholm-train/) one from Hamburg" /><figcaption class="center">
+    
+    Some trains were quite fancy, like this <a href="https://www.railwaygazette.com/archive/2026/05/05/snalltaget-kickstarts-direct-daytime-hamburg-copenhagen-stockholm-train/">Snälltåget</a> one from Hamburg
+  </figcaption>
+</figure>
+
+<h3 id="cost-of-rail-freedom---an-interrail-pass">Cost of rail Freedom - an Interrail pass</h3>
+<p>Train travel across Europe is notoriously expensive. Especially in countries where it works with dynamic pricing (unlike Belgium). An Interrail pass, for those who aren&rsquo;t aware, allows you to board any train in Europe without buying a ticket. The pass is decently priced - 7 days in a month costs <a href="https://www.interrail.com/en/interrail-passes/global-pass">$381</a> for an adult. Looks exciting, easy and liberating, right?</p>
+<figure class="center"><img src="/images/eurorailtrip/IMG_6755.jpeg" alt="The train&#39;s restaurant, with a view of rapeseed fields rolling past" /><figcaption class="center">
+    
+    The train&rsquo;s restaurant, with a view of rapeseed fields rolling past
+  </figcaption>
+</figure>
+
+<h4 id="you-cant-put-a-price-on-freedom">You can&rsquo;t put a price on Freedom</h4>
+<p>Happy, relaxed and naive, we thought everything was going to be so easy, after all we had the Freedom - an Interrail pass.</p>
+<p>So while we were saying bye to one of our hotels, after the wonderfully boring breakfast, and heading to the station to take our next leg, we discovered that all seats on the train were booked. Not only on this train, but on the next three out of the four daily trains on our route.</p>
+<figure class="center"><img src="/images/eurorailtrip/IMG_6768.jpeg" alt="Malmö, one of our stopover cities, on the walk to the station" /><figcaption class="center">
+    
+    Malmö, one of our stopover cities, on the walk to the station
+  </figcaption>
+</figure>
+
+<p>Some trains force you to reserve a seat before you board; sadly, the seat reservation is something which you have to do yourself and isn&rsquo;t included in the pass price. Let&rsquo;s put the costs apart - what was even more shocking, on certain routes, there aren&rsquo;t any seats available to be reserved for Interrail pass holders, as apparently, there is a quota for Interrail passes on trains.</p>
+<p>If I have to reserve seats in advance for my travel, then I could very well purchase the ticket in advance too, so why would I need an Interrail pass? :/</p>
+<h4 id="freedomless-vulnerable-pass">Freedomless Vulnerable pass</h4>
+<p>Ok ok, we managed to get some seats reserved. Of course, you can&rsquo;t reserve them on the Interrail mobile app, but only on their web portal, where it forces you to create a trip again and add your pass again. The next big shocker was that despite Interrail suffering a <a href="https://cybernews.com/security/300000-travelers-eurail-data-breach/">big data breach</a> just months ago, there is no option to add MFA to your account. So, whatever personal data I&rsquo;m adding is probably going to end up in unauthorised hands again, and might be used to target me in future for phishing.</p>
+<p>So the cost is not just for an Interrail pass, but to ensure that your private data reaches bad actors.</p>
+<p>Given that, hotel, train or ferry WiFi wasn&rsquo;t something I was going to trust with anything sensitive. I carried my own <a href="https://eu.store.ui.com/eu/en/products/utr?c=BE">travel router</a> for the whole trip instead, so it&rsquo;s one connection I control, rather than whatever open network happens to be broadcasting at each stop.</p>
+<figure class="center"><img src="/images/eurorailtrip/IMG_6862.jpeg" alt="My UniFi travel router tucked into the seat pocket, connected to the Finnish train&#39;s public WiFi" /><figcaption class="center">
+    
+    My UniFi travel router tucked into the seat pocket, connected to the Finnish train&rsquo;s public WiFi
+  </figcaption>
+</figure>
+
+<h3 id="one-app-to-rule-them-all">One app to rule them all</h3>
+<p>It really is a pity that Interrail or as a matter of fact, none of the EU rail organisations could get a cross EU app up and working. We finally have an app - <a href="https://chuuchuu.com">ChuuChuu</a> where you can reliably put down your journey and it provides you multiple analysis for the train on that route from past, along with immediate notifications for real time events. Sadly, it&rsquo;s at the moment only available for iOS. Give it a try!</p>
+<figure class="center"><img src="/images/eurorailtrip/chuuchuu-lockscreen.jpeg" alt="Live activity on the lock screen, tracking our ICE from Frankfurt to Hamburg" /><figcaption class="center">
+    
+    Live activity on the lock screen, tracking our ICE from Frankfurt to Hamburg
+  </figcaption>
+</figure>
+
+<h3 id="will-i-do-it-again">Will I do it again?</h3>
+<p>Not very soon, but it deserves another chance after a few months.</p>
+<figure class="center"><img src="/images/eurorailtrip/IMG_7214.jpeg" alt="Pulling into the platform on a sunny afternoon, near the end of our route" /><figcaption class="center">
+    
+    Pulling into the platform on a sunny afternoon, near the end of our route
+  </figcaption>
+</figure>
+
+]]></content></item><item><title>AI Generated Experiments – European Driving Resources</title><link>https://satyamkapoor.com/posts/ai-generated-experiments/</link><pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate><author>satyam@satyamkapoor.com (Satyam Kapoor)</author><guid>https://satyamkapoor.com/posts/ai-generated-experiments/</guid><description>One of my long-desired AI experiments: creating practical learning resources for Indians moving to Europe using Claude and Nemotron models.</description><content type="html"><![CDATA[<h2 id="one-of-my-long-desired-ai-experiments">One of My Long-Desired AI Experiments</h2>
 <p>For quite some time, I&rsquo;ve wanted to experiment with using AI to create genuinely useful, practical learning resources. This post represents one such experiment - combining AI generation with real-world utility.</p>
 <p>I&rsquo;ve generated two companion resources using <strong>Claude Sonnet 4.6</strong>:</p>
 <h3 id="-european-driving-handbook-crash-course">📚 European Driving Handbook (Crash Course)</h3>
@@ -103,15 +155,15 @@ Today, I finally decided to ask at the drive-thru if I could collect points. To 
 <p>It&rsquo;s free upto 300,000 queries a month. You can always choose to go with the Pro pack which is €19.90/year. It allows Unlimited queries (ofcourse) along with ability to share it with your close family &amp; friends.</p>
 <p>Make sure to explain your family &amp; friends that you can see their logs if you want. I suggest you to turn off logging for the sake of everyone&rsquo;s privacy.</p>
 <p>Here are some screenshots from nextDNS UI.</p>
-<h2 id="hahahugoshortcode9s0hbhb">
+<h2 id="hahahugoshortcode10s0hbhb">
     <img src="/images/nextDNS/analytics_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode9s1hbhb">
+<h2 id="hahahugoshortcode10s1hbhb">
     <img src="/images/nextDNS/analytics_graph_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
-<h2 id="hahahugoshortcode9s2hbhb">
+<h2 id="hahahugoshortcode10s2hbhb">
     <img src="/images/nextDNS/parental_control_nextDNS.png"  class="center"  style="border-radius: 2px;width:100%;"  />
 
 </h2>
