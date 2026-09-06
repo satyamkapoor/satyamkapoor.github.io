@@ -1,0 +1,16 @@
+{{- $class := .Get "class" -}}
+<figure{{ with $class }} class="{{ . }}"{{ end }}>
+  {{- if .Get "link" }}<a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>{{ end -}}
+  <img src="{{ .Get "src" | safeURL }}"
+    {{- with .Get "alt" }} alt="{{ . }}"{{ else }}{{ with .Get "caption" }} alt="{{ . | plainify }}"{{ end }}{{ end }}
+    {{- with .Get "width" }} width="{{ . }}"{{ end }}
+    {{- with .Get "height" }} height="{{ . }}"{{ end }}
+    {{- with .Get "loading" }} loading="{{ . }}"{{ end }} />
+  {{- if .Get "link" }}</a>{{ end -}}
+  {{- if or (.Get "title") (.Get "caption") -}}
+  <figcaption{{ with $class }} class="{{ . }}"{{ end }}>
+    {{ with .Get "title" }}{{ . | markdownify }}{{ end }}
+    {{ with .Get "caption" }}{{ . | markdownify }}{{ end }}
+  </figcaption>
+  {{- end }}
+</figure>
